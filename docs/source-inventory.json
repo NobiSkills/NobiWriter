@@ -1,0 +1,100 @@
+{
+  "date": "2026-10-13",
+  "files": [
+    {
+      "file": "01-NobiWriter-Knowledge-Base-v1.txt",
+      "status": "available",
+      "redistributed": false
+    },
+    {
+      "file": "02-NobiWriter-Knowledge.txt",
+      "status": "available",
+      "redistributed": false
+    },
+    {
+      "file": "03-S01-normalized.txt",
+      "status": "available",
+      "redistributed": false
+    },
+    {
+      "file": "04-S02-normalized.txt",
+      "status": "available",
+      "redistributed": false
+    },
+    {
+      "file": "05-S03-normalized.txt",
+      "status": "available",
+      "redistributed": false
+    },
+    {
+      "file": "06-S04-normalized.txt",
+      "status": "unavailable_in_latest_upload",
+      "redistributed": false
+    },
+    {
+      "file": "07-S05-normalized.txt",
+      "status": "available",
+      "redistributed": false
+    },
+    {
+      "file": "08-S06-normalized.txt",
+      "status": "available",
+      "redistributed": false
+    },
+    {
+      "file": "09-S07-normalized.txt",
+      "status": "available",
+      "redistributed": false
+    },
+    {
+      "file": "10-S08-normalized.txt",
+      "status": "available",
+      "redistributed": false
+    },
+    {
+      "file": "11-260823-DiscourseAnalysis.pdf",
+      "status": "available",
+      "redistributed": false
+    },
+    {
+      "file": "12-NobiWriter-Competitive-Messaging-Research.txt",
+      "status": "available",
+      "redistributed": false
+    },
+    {
+      "file": "13-NobiWriter-Brand-Identity-Discourse-v1.txt",
+      "status": "unavailable_in_latest_upload",
+      "redistributed": false
+    },
+    {
+      "file": "14-NobiWriter-Telegram-Competitive-Messaging-Research.txt",
+      "status": "available",
+      "redistributed": false
+    },
+    {
+      "file": "15-NobiWriter-Example-Bank.txt",
+      "status": "available",
+      "redistributed": false
+    },
+    {
+      "file": "16-NobiWriter-Voice-Tone-and-Writing-Rules-v1.txt",
+      "status": "available",
+      "redistributed": false
+    },
+    {
+      "file": "17-NobiWriter-Persian-Controlled-Vocabulary.txt",
+      "status": "available",
+      "redistributed": false
+    },
+    {
+      "file": "18-NobiWriter-Claims-and-Evidence-Lessons-v1-1-.txt",
+      "status": "available",
+      "redistributed": false
+    },
+    {
+      "file": "19-NobiWriter-Creative-Framework.txt",
+      "status": "available",
+      "redistributed": false
+    }
+  ]
+}

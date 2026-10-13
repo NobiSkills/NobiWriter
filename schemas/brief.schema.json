@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "enum": [
+        "generate",
+        "review",
+        "rewrite"
+      ]
+    },
+    "route": {
+      "enum": [
+        "product",
+        "campaign",
+        "pages"
+      ]
+    },
+    "content_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "goal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "audience": {
+      "type": "string",
+      "minLength": 1
+    },
+    "knowledge_level": {
+      "enum": [
+        "beginner",
+        "experienced",
+        "unknown"
+      ]
+    },
+    "product": {
+      "type": "string",
+      "minLength": 1
+    },
+    "touchpoint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "financial_sensitivity": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verified_at": {
+            "type": "string",
+            "format": "date"
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "statement",
+          "source_ref",
+          "verified_at",
+          "scope"
+        ]
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "max_characters": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "requested_action": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_text": {
+      "type": "string"
+    },
+    "output_format": {
+      "enum": [
+        "text",
+        "markdown",
+        "json"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "mode",
+    "route",
+    "content_type",
+    "goal",
+    "audience",
+    "financial_sensitivity",
+    "facts",
+    "unknowns"
+  ]
+}
