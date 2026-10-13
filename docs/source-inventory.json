@@ -28,8 +28,11 @@
     },
     {
       "file": "06-S04-normalized.txt",
-      "status": "unavailable_in_latest_upload",
-      "redistributed": false
+      "status": "available",
+      "redistributed": false,
+      "received_name": "S04-normalized.txt",
+      "sha256": "3b52b75410825b73593b6951bca5c19f4f7c734c539ff667139a3488a3f3dc0f",
+      "integration": "principles adapted into product-writing.md and pages-and-announcements.md"
     },
     {
       "file": "07-S05-normalized.txt",
@@ -63,8 +66,11 @@
     },
     {
       "file": "13-NobiWriter-Brand-Identity-Discourse-v1.txt",
-      "status": "unavailable_in_latest_upload",
-      "redistributed": false
+      "status": "available",
+      "redistributed": true,
+      "received_name": "NobiWriter-Brand-Identity-Discourse-v1(1).txt",
+      "sha256": "cb2b0c554833cfb4103d3880997442e437e77681164fc758060cdececd1a1653",
+      "integration": "integrated in references/brand-identity.md"
     },
     {
       "file": "14-NobiWriter-Telegram-Competitive-Messaging-Research.txt",
@@ -96,5 +102,6 @@
       "status": "available",
       "redistributed": false
     }
-  ]
+  ],
+  "updated_at": "2026-10-13"
 }
