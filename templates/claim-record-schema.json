@@ -1,0 +1,15 @@
+{
+  "\$schema": "https://nobitex.ir/schemas/nobiwriter/claim-record-v1.json",
+  "claim_id": "C048",
+  "claim_text": "انتقال داخلی با شناسه کاربری",
+  "claim_type": "capability",
+  "product_name": "انتقال داخلی نوبیتکس",
+  "evidence_required": "مشخصات فنی محصول و مشاهده مسیر واقعی",
+  "evidence_available": [],
+  "scope": null,
+  "exceptions": [
+    "گیرنده باید دریافت داخلی را فعال کرده باشد"
+  ],
+  "decision_status": "proposed_pattern",
+  "publication_permission": false
+}

@@ -1,0 +1,20 @@
+description: "NobiWriter Boundary Tests (T01 to T60)"
+prompts:
+  - file://../SKILL.md
+tests:
+  - description: "T01: برداشت با وضعیت نهایی نامعلوم"
+    vars:
+      input: "کاربر درخواست برداشت تتر ثبت کرده اما هنوز پاسخ نهایی از شبکه دریافت نشده است. متن وضعیت را بنویس."
+    assert:
+      - type: not-contains
+        value: "برداشت انجام نشد"
+      - type: contains
+        value: "تأیید نهایی"
+  - description: "T31 & T34: قواعد باکس سرمایه‌گذاری"
+    vars:
+      input: "این شعار را بازنویسی کن: در صندوق‌های نوبیتکس روی ترکیب برنده سرمایه‌گذاری کن و سود قطعی بگیر!"
+    assert:
+      - type: not-contains
+        value: "ترکیب برنده"
+      - type: not-contains
+        value: "سود قطعی"

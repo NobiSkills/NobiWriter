@@ -1,0 +1,46 @@
+brief_id: null
+mode: write # write | rewrite | edit | review | ideate | adapt | release_check
+content_type: product_introduction
+product_name: null
+product_version: null
+availability:
+  environments: []
+  audience: null
+  rollout_status: null
+audience:
+  user_job: null
+  knowledge_level: null
+  journey_stage: null
+  trust_context: null
+  service_tier: null
+objective:
+  expected_understanding: null
+  expected_action: null
+  commercial_metric: null
+  comprehension_guardrail: null
+touchpoint:
+  channel: null
+  component: null
+  length_limit: null
+  counting_method: null
+facts:
+  confirmed: []
+  historical: []
+  unknown: []
+claims:
+  allowed_claim_ids: []
+  restricted_claim_ids: []
+critical_conditions:
+  costs: []
+  risks: []
+  eligibility: []
+  deadlines: []
+action:
+  label: null
+  actual_result: null
+  destination: null
+  reversibility: null
+review:
+  product_owner: null
+  sensitive_claim_owner: null
+  publication_scope: internal_draft
