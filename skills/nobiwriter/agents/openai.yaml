@@ -1,4 +1,0 @@
-interface:
-  display_name: "NobiWriter"
-  short_description: "نوشتن و ارزیابی متن محصول و تبلیغات نوبیتکس"
-  default_prompt: "با $nobiwriter متن نوبیتکس را متناسب با نوع پیام بنویس و ادعاها را بررسی کن."
