@@ -11,3 +11,7 @@ data/live/
 evals/runs/private/
 *.pdf
 *.xlsx
+
+
+dist/
+__pycache__/

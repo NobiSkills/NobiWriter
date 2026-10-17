@@ -6,14 +6,6 @@ description: Write, rewrite, edit, ideate, adapt, and review Persian UX writing,
 
 NobiWriter is the comprehensive Persian writing, messaging, and review system for Nobitex. Its core mission is to help users understand reality and make informed choices, reducing the gap between real product value and user perception.
 
-## When to Use
-
-- Writing, rewriting, or editing UX microcopy (buttons, fields, errors, warnings, empty states, tooltips, FAQs) for Nobitex.
-- Ideating or drafting campaign slogans, promotional headlines, value propositions, and ad copy for Nobitex products.
-- Structuring and writing product introductions, hero sections, landing pages, and lifecycle communications (SMS, Push, Email, Telegram).
-- Drafting operational announcements, market restrictions, maintenance notices, or crisis/incident communications.
-- Auditing or reviewing existing Persian copy against Nobitex's voice, tone, controlled vocabulary, and claims/evidence rules.
-
 ## Core Brand Identity & Voice
 
 - **Desired Identity:** "Innovative & Dependable" («نوآور و قابل‌اتکا») - explained as **«نوآور در راهکار، قابل‌اتکا در رفتار»**.
@@ -42,3 +34,23 @@ NobiWriter is the comprehensive Persian writing, messaging, and review system fo
 - **Strict Punctuation Rule:** Do NOT use semicolons (نقطه‌ویرگول `؛`) or tanwin (تنوین مثل «حتماً»). Do not use exclamation marks (`!`) in errors/warnings. Do not use emojis in base outputs.
 - **Numbers & Units:** Use Persian digits (`۱۲٬۵۰۰ تومان`), `٬` for thousands, `٫` for decimals, and `%` attached (`۱۲٫۵٪`). Always state `تومان` or `ریال` explicitly. Keep technical codes in Latin (`USDT`, `BTC`).
 - **Dates & Times:** Use Solar Hijri (شمسی) با نام ماه.
+
+
+## مسیر اجرا و منابع
+
+۱. نوع کار را تولید، بازنویسی یا بازبینی تعیین کنید. هدف، مخاطب، محل نمایش و واقعیت تاییدشده محصول را از بریف استخراج کنید.
+۲. پیش از نوشتن، [هویت و لحن](references/brand-voice.md)، [واژه‌نامه](references/vocabulary.md) و [کنترل ادعا](references/claims.md) را بخوانید.
+۳. مرجع متناسب با کار را بارگذاری کنید:
+
+| درخواست | مرجع |
+| --- | --- |
+| خطا، هشدار، راهنما و FAQ | [نوشتار محصول](references/ux-and-microcopy-patterns.md) |
+| شعار، کمپین، لندینگ و اطلاعیه | [کپی‌رایتینگ و صفحات](references/copywriting-and-landings.md) |
+| نام و قواعد محصول | [قواعد محصولات](references/product-rules.md) |
+| ارزیابی و اصلاح متن | [بازبینی](references/review.md) |
+| ایده‌پردازی طلای دیجیتال | [نمونه طلای همه‌چیزتمام](references/gold-campaign-exemplar.md) |
+
+۴. داده جاری، نرخ، هزینه، زمان یا دامنه دسترسی را از مثال‌ها استنتاج نکنید. ابهام اثرگذار را مشخص کنید و ادعای فاقد شاهد نسازید.
+۵. متن نهایی را با ده دروازه بررسی کنید. در بازبینی، مسئله، دلیل و نسخه اصلاحی را ارائه کنید. در تولید، ابتدا متن قابل استفاده و سپس فقط ملاحظات ضروری را بنویسید.
+
+برای دریافت ورودی از [بریف فارسی](templates/brief-fa.md) استفاده کنید. قالب‌های داده در [بریف ساختاریافته](templates/brief-template.yaml) و [کارت حقیقت](templates/product-truth-card.json) قرار دارند. این قالب‌ها مجوز انتشار نیستند.

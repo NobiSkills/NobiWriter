@@ -1,0 +1,16 @@
+{
+  "id": "example-unknown-withdrawal",
+  "mode": "rewrite",
+  "route": "product",
+  "content_type": "وضعیت برداشت",
+  "goal": "بیان دقیق وضعیت نامعلوم",
+  "audience": "کاربر درخواست‌دهنده برداشت",
+  "financial_sensitivity": "high",
+  "facts": [],
+  "unknowns": [
+    "نتیجه نهایی",
+    "وضعیت کسر مبلغ",
+    "امکان تکرار"
+  ],
+  "source_text": "برداشت ناموفق بود، دوباره تلاش کنید"
+}

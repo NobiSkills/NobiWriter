@@ -1,6 +1,6 @@
-description: "NobiWriter Boundary Tests (T01 to T60)"
+description: "Two illustrative checks; not the complete T01-T60 suite"
 prompts:
-  - file://../SKILL.md
+  - file://../skills/nobiwriter/SKILL.md
 tests:
   - description: "T01: برداشت با وضعیت نهایی نامعلوم"
     vars:

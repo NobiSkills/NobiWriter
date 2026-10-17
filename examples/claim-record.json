@@ -1,0 +1,13 @@
+{
+  "id": "example-internal-transfer",
+  "claim_text": "انتقال داخلی با شناسه کاربری",
+  "claim_type": "capability",
+  "product": "انتقال داخلی",
+  "scope": "نمونه آموزشی، دامنه واقعی تایید نشده",
+  "evidence_required": "مشخصات محصول و بررسی مسیر واقعی",
+  "evidence_existing": [],
+  "status": "needs_evidence",
+  "exceptions": [
+    "گیرنده باید دریافت داخلی را فعال کرده باشد"
+  ]
+}

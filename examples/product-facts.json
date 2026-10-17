@@ -1,0 +1,19 @@
+{
+  "id": "fictional-training-product",
+  "product": "محصول فرضی آموزشی",
+  "version": "demo",
+  "verified_at": "2026-10-17",
+  "source_ref": "fictional-example-not-live",
+  "availability": "internal",
+  "channels": [
+    "محیط آموزشی"
+  ],
+  "facts": [],
+  "limitations": [
+    "قابل انتشار به‌عنوان واقعیت محصول نیست"
+  ],
+  "risks": [
+    "نمونه آموزشی است"
+  ],
+  "review_trigger": "هر استفاده خارج از آموزش"
+}

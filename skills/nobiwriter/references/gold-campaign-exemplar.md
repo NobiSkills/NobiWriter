@@ -28,3 +28,4 @@ User-approved positive example for Nobitex digital-gold campaign copy. This is a
 
 ## Reviewer takeaway
 Reward **proposition-led creativity** rather than clever language alone. Reject inflated or unevidenced functional claims even when the line is catchy.
+
