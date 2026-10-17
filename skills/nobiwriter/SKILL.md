@@ -1,39 +1,43 @@
 ---
 name: nobiwriter
-description: Write, rewrite, edit, ideate, adapt, and review Persian UX writing, microcopy, error/warning messages, product copywriting, slogans, landing pages, and official announcements for Nobitex (نوبیتکس). Use whenever the user mentions Nobitex, NobiWriter (نوبی‌رایتر), or asks for Persian fintech/crypto product copy, UX microcopy, campaign slogans, landing page sections, or operational/crisis announcements following Nobitex's brand voice and claims framework.
+description: Write, rewrite, and review Persian UX copy, product messages, slogans, landing pages, and operational announcements for Nobitex (نوبیتکس). Use when a request mentions Nobitex or NobiWriter, or needs Persian fintech and crypto copy that follows Nobitex brand voice, product facts, and claim rules.
 ---
-# NobiWriter (نوبی‌رایتر)
+# نوبی‌رایتر
 
-NobiWriter is the comprehensive Persian writing, messaging, and review system for Nobitex. Its core mission is to help users understand reality and make informed choices, reducing the gap between real product value and user perception.
+نوبی‌رایتر راهنمای نوشتن و بازبینی محتوای فارسی نوبیتکس است. خروجی باید واقعیت محصول را روشن کند، به تصمیم آگاهانه کاربر کمک کند و وعده‌ای فراتر از شواهد نسازد.
 
-## Core Brand Identity & Voice
+## هویت و صدای برند
 
-- **Desired Identity:** "Innovative & Dependable" («نوآور و قابل‌اتکا») - explained as **«نوآور در راهکار، قابل‌اتکا در رفتار»**.
-- **Constant Voice:** Clear, accurate, responsible, respectful, and human with financial dignity (روشن، دقیق، مسئولانه، محترمانه و انسانی با وقار مالی).
-- **Relationship with User:** Informed and responsible guide (راهنمای آگاه و مسئول). Increase understanding and preserve user agency. Never act as an unlicensed investment advisor.
+- هویت مطلوب: **«نوآور در راهکار، قابل‌اتکا در رفتار»** (Innovative & Dependable)
+- صدای ثابت: روشن، دقیق، مسئولانه، محترمانه و انسانی، با وقار متناسب با یک برند مالی
+- نقش در ارتباط با کاربر: راهنمای آگاه و مسئول. فهم و اختیار کاربر را بیشتر کنید و نقش مشاور سرمایه‌گذاری نگیرید.
 
-## 10 Mandatory Gates (Pre-flight Checklist)
+## ده معیار اصلی
 
-1. Product & System Reality.
-2. Evidence-Backed Claims.
-3. Visible Conditions & Risks.
-4. No Financial Pressure or False Certainty (Zero FOMO).
-5. Contextual Tone Match.
-6. Authentic Action (CTA).
-7. No Cross-Selling in Sensitive States.
-8. Semantic Distinction.
-9. Rollout & Environment Scope.
-10. No Unverified Material Assumptions.
+پیش از تحویل متن، این موارد را بررسی کنید:
 
-## Tone, Pronoun & Persian Orthography Rules
+1. متن با واقعیت فعلی محصول و سیستم سازگار است.
+2. هر ادعا شاهد کافی دارد.
+3. شرط‌ها، هزینه‌ها و ریسک‌های اثرگذار دیده می‌شوند.
+4. متن فشار مالی، ترس از دست دادن فرصت یا قطعیت کاذب نمی‌سازد.
+5. لحن با موقعیت پیام هماهنگ است.
+6. فراخوان اقدام (CTA) به کاری واقعی و در دسترس اشاره می‌کند.
+7. در خطا، بحران یا وضعیت حساس، فروش متقاطع انجام نمی‌شود.
+8. مفاهیم نزدیک، مانند ثبت سفارش و انجام معامله، با هم یکی نمی‌شوند.
+9. دامنه عرضه، محیط و گروه کاربران به‌درستی بیان شده است.
+10. جزئیات اثرگذار و تاییدنشده به متن اضافه نشده‌اند.
 
-- **Pronouns & Verb Person:** Omit unnecessary pronouns in UI/Operational text («درخواست برداشت ثبت شد»). Use «شما» naturally in education/support. Never use singular second-person «تو» or singular verbs («خرید کن»).
-- **No Humor in Financial Vulnerability.**
-- **Effect Before Cause.**
-- **Persian Typography:** Use standard Persian «ی» and «ک» and correct non-joiners (نیم‌فاصله).
-- **Strict Punctuation Rule:** Do NOT use semicolons (نقطه‌ویرگول `؛`) or tanwin (تنوین مثل «حتماً»). Do not use exclamation marks (`!`) in errors/warnings. Do not use emojis in base outputs.
-- **Numbers & Units:** Use Persian digits (`۱۲٬۵۰۰ تومان`), `٬` for thousands, `٫` for decimals, and `%` attached (`۱۲٫۵٪`). Always state `تومان` or `ریال` explicitly. Keep technical codes in Latin (`USDT`, `BTC`).
-- **Dates & Times:** Use Solar Hijri (شمسی) با نام ماه.
+## لحن و نگارش فارسی
+
+- در متن رابط کاربری و پیام عملیاتی، ضمیرهای غیرضروری را حذف کنید: «درخواست برداشت ثبت شد».
+- در آموزش و پشتیبانی، «شما» را طبیعی و محدود به کار ببرید.
+- از «تو» و فعل مفرد استفاده نکنید، مگر کمپین غیررسمی جداگانه تایید شده باشد.
+- در خطا یا موقعیت آسیب‌پذیر مالی از شوخی استفاده نکنید.
+- ابتدا اثر یا وضعیت را بگویید و سپس دلیل را توضیح دهید.
+- از «ی» و «ک» فارسی و نیم‌فاصله درست استفاده کنید.
+- نقطه‌ویرگول، تنوین، ایموجی و علامت تعجب را در خروجی پایه به کار نبرید. در خطا و هشدار از علامت تعجب استفاده نکنید.
+- عددها را فارسی بنویسید: `۱۲٬۵۰۰ تومان` و `۱۲٫۵٪`. واحد تومان یا ریال را روشن ذکر کنید. کدهایی مانند `USDT` و `BTC` لاتین بمانند.
+- تاریخ را شمسی و با نام ماه بنویسید.
 
 
 ## مسیر اجرا و منابع
@@ -51,6 +55,6 @@ NobiWriter is the comprehensive Persian writing, messaging, and review system fo
 | ایده‌پردازی طلای دیجیتال | [نمونه طلای همه‌چیزتمام](references/gold-campaign-exemplar.md) |
 
 ۴. داده جاری، نرخ، هزینه، زمان یا دامنه دسترسی را از مثال‌ها استنتاج نکنید. ابهام اثرگذار را مشخص کنید و ادعای فاقد شاهد نسازید.
-۵. متن نهایی را با ده دروازه بررسی کنید. در بازبینی، مسئله، دلیل و نسخه اصلاحی را ارائه کنید. در تولید، ابتدا متن قابل استفاده و سپس فقط ملاحظات ضروری را بنویسید.
+۵. متن نهایی را با ده معیار اصلی بررسی کنید. در بازبینی، مسئله، دلیل و نسخه اصلاحی را ارائه کنید. در تولید، ابتدا متن قابل استفاده و سپس فقط ملاحظات ضروری را بنویسید.
 
 برای دریافت ورودی از [بریف فارسی](templates/brief-fa.md) استفاده کنید. قالب‌های داده در [بریف ساختاریافته](templates/brief-template.yaml) و [کارت حقیقت](templates/product-truth-card.json) قرار دارند. این قالب‌ها مجوز انتشار نیستند.

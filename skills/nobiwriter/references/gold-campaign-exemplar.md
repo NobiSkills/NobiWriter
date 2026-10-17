@@ -1,31 +1,27 @@
-# Positive Campaign Exemplar: «طلای همه‌چیزتمام»
+# نمونه مرجع: «طلای همه‌چیزتمام»
 
-## Status
-User-approved positive example for Nobitex digital-gold campaign copy. This is a creative quality reference, not a blanket approval of every implied product claim.
+این شعار با تایید کاربر به‌عنوان یک نمونه مثبت برای کمپین طلای دیجیتال نوبیتکس ثبت شده است. تایید خلاقیت شعار به معنی تایید همه ادعاهایی نیست که ممکن است از آن برداشت شود.
 
-## Example
-**«طلای همه‌چیزتمام»** — campaign slogan for Nobitex digital gold (including tokenized-gold offers where applicable).
+## چرا شعار خوبی است؟
 
-## Why it works
-- **Product–message fit:** The phrase is anchored in gold itself, rather than an abstract promise of a better future or a guaranteed return.
-- **Value-proposition density:** «همه‌چیزتمام» compactly conveys the intended breadth of the digital-gold proposition when the campaign actually supports it: digital access and trading conveniences versus some traditional gold-purchase experiences.
-- **Differentiation:** It invites a comparison of the *experience and capabilities* of obtaining and managing gold, not an unsupported assertion of superior returns.
-- **Memorability:** Familiar colloquial Persian expression, double meaning, and concise rhythm combine into a distinctive campaign hook.
-- **Creative discipline:** Emotional appeal should emerge from actual product utility, rather than urgency, FOMO, price prediction, or claims of certain financial success.
+- از خود محصول و دسته طلا شروع می‌کند، نه از وعده آینده بهتر یا بازده قطعی.
+- کوتاه و به‌یادماندنی است و تعبیر آشنای «همه‌چیزتمام» را به تجربه خرید و مدیریت طلای دیجیتال وصل می‌کند.
+- تفاوت را در تجربه و امکانات محصول می‌سازد، نه در ادعای بازده بیشتر.
+- بازی زبانی آن ساده و طبیعی است و برای فهمیدن به توضیح اضافه نیاز ندارد.
 
-## Rules for future generation and review
-1. Start from verified product mechanics and genuinely differentiating benefits versus physical gold or other digital-gold channels.
-2. Seek a compact creative frame that joins *what the product is* with *why its experience matters*.
-3. Favor demonstrable utility (such as access, transaction process, storage/handling, or amount flexibility **only if verified**) over performance promises.
-4. Evaluate the whole claim impression, including implicit superlatives. «همه‌چیزتمام» is promotional language, not evidence that the product literally has every feature or is risk-free.
-5. Do not claim physical delivery, full backing, custody guarantees, security superiority, fees, liquidity, fractional buy limits, or redemption unless verified for the exact product and rollout.
-6. Preserve a distinction between creative campaign headline and operational/financial disclosures; relevant costs, volatility, counterparty/custody risk, and product conditions must be clear at appropriate touchpoints.
-7. Do not mechanically reuse «همه‌چیزتمام» for unrelated products. Transfer the *method*: product truth + meaningful contrast + memorable expression.
+## چطور از این منطق استفاده کنیم؟
 
-## Contrast
-- **Positive:** «طلای همه‌چیزتمام» — grounded in product category and breadth of experience; still check supporting claims.
-- **Weaker benchmark:** «آینده‌ات رو طلا کن» — emotive but relies more on a better-future promise, and its singular familiar address violates the default NobiWriter brand rule.
+1. ابتدا سازوکار محصول و مزیت‌های تاییدشده آن را مشخص کنید.
+2. نقطه تمایز معنادار محصول را پیدا کنید. برای طلا این تمایز می‌تواند دسترسی، فرایند معامله، نگهداری یا انعطاف مبلغ باشد، البته فقط وقتی برای نسخه فعلی محصول تایید شده باشد.
+3. ایده‌ای بسازید که ماهیت محصول و دلیل اهمیت آن برای کاربر را در یک بیان کوتاه جمع کند.
+4. برداشت کلی شعار را بسنجید. «همه‌چیزتمام» یک تعبیر تبلیغاتی است و ثابت نمی‌کند محصول همه قابلیت‌ها را دارد یا بدون ریسک است.
+5. درباره تحویل فیزیکی، پشتوانه، نگهداری، امنیت، کارمزد، نقدشوندگی، حداقل خرید یا بازخرید بدون شاهد روشن ادعا نسازید.
+6. تیتر خلاق را از توضیحات مالی و عملیاتی جدا نگه دارید. هزینه، نوسان، ریسک طرف مقابل و شرایط محصول باید در جای مناسب روشن شوند.
+7. خود عبارت «همه‌چیزتمام» را برای محصولات دیگر تکرار نکنید. منطق آن را منتقل کنید: حقیقت محصول، تفاوت معنادار و بیان به‌یادماندنی.
 
-## Reviewer takeaway
-Reward **proposition-led creativity** rather than clever language alone. Reject inflated or unevidenced functional claims even when the line is catchy.
+## مقایسه
 
+- **نمونه مثبت:** «طلای همه‌چیزتمام» به دسته محصول و گستره تجربه آن وصل است، اما ادعاهای پشتیبانش همچنان باید بررسی شوند.
+- **نمونه ضعیف‌تر:** «آینده‌ات رو طلا کن» بیشتر بر وعده یک آینده بهتر تکیه دارد و خطاب مفرد آن نیز با لحن پایه نوبی‌رایتر سازگار نیست.
+
+در ارزیابی شعار، ارتباط خلاقیت با ارزش پیشنهادی را مهم‌تر از بازی زبانی صرف بدانید. یک جمله جذاب، ادعای اغراق‌آمیز یا بدون شاهد را قابل قبول نمی‌کند.
