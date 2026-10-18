@@ -1,0 +1,27 @@
+{
+  "example_only": true,
+  "profile": "advertising",
+  "scores": {
+    "brand_voice": 8, "product_relevance": 8, "clarity": 8, "surface_fit": 8,
+    "language": 8, "task_effectiveness": 8, "creativity": 8, "distinctiveness": 8
+  },
+  "reasons": {
+    "brand_voice": "داده آزمایشی برای نمایش قالب، نه ارزیابی یک متن واقعی",
+    "product_relevance": "داده آزمایشی برای نمایش قالب، نه ارزیابی یک متن واقعی",
+    "clarity": "داده آزمایشی برای نمایش قالب، نه ارزیابی یک متن واقعی",
+    "surface_fit": "داده آزمایشی برای نمایش قالب، نه ارزیابی یک متن واقعی",
+    "language": "داده آزمایشی برای نمایش قالب، نه ارزیابی یک متن واقعی",
+    "task_effectiveness": "داده آزمایشی برای نمایش قالب، نه ارزیابی یک متن واقعی",
+    "creativity": "داده آزمایشی برای نمایش قالب، نه ارزیابی یک متن واقعی",
+    "distinctiveness": "داده آزمایشی برای نمایش قالب، نه ارزیابی یک متن واقعی"
+  },
+  "gates": {
+    "product_reality": {"state":"not_applicable","reason":"نمونه نمایشی، نه ادعای محصول"},
+    "claim_evidence": {"state":"not_applicable","reason":"نمونه نمایشی، نه ادعای محصول"},
+    "agency_and_risk": {"state":"not_applicable","reason":"نمونه نمایشی، نه ادعای محصول"},
+    "action_and_context": {"state":"not_applicable","reason":"نمونه نمایشی، نه ادعای محصول"},
+    "financial_meaning": {"state":"not_applicable","reason":"نمونه نمایشی، نه ادعای محصول"},
+    "scope_and_privacy": {"state":"not_applicable","reason":"نمونه نمایشی، نه ادعای محصول"}
+  },
+  "material_copy_issue": false
+}

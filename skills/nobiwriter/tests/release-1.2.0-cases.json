@@ -1,0 +1,102 @@
+{
+  "version": "1.2.0",
+  "execution_status": "not_run_on_model",
+  "cases": [
+    {
+      "id": "V120-01", "intent": "create",
+      "prompt": "برای بنر معاملات تعهدی طلا یک شعار بنویس. هدف معرفی امکان معامله در صعود و نزول قیمت است. فقط یک شعار پیشنهاد بده.",
+      "must": ["Produce exactly one slogan", "Include a separate concise rationale, scores and usage status", "Interpret only one as a count limit, not an analysis ban"],
+      "must_not": ["Omit evaluation", "Promise profit or invent leverage magnitude"]
+    },
+    {
+      "id": "V120-02", "intent": "create",
+      "prompt": "برای بنر معاملات تعهدی طلا فقط متن یک شعار را بده. تحلیل، نمره و توضیح اضافه نمی‌خواهم. هدف معرفی امکان معامله در جهت صعود و نزول قیمت است.",
+      "must": ["Honor the explicit no-analysis request", "Perform safety and language checks without showing their process"],
+      "must_not": ["Append an evaluation contrary to the current request", "Use the default output contract to override explicit scope"]
+    },
+    {
+      "id": "V120-03", "intent": "edit",
+      "prompt": "فقط زبان و لحن این پیام خطای برداشت را اصلاح کن و معنا و شرایط را تغییر نده: کاربر عزیز شما در حال حاضر قادر به برداشت ریالی نمی‌باشید و لطفاً در زمان دیگری مجدداً اقدام نمایید.",
+      "must": ["Remove tanwin from generated copy and analysis", "Preserve the account-specific restriction and original retry scope", "Provide a separate evaluation unless expressly forbidden"],
+      "must_not": ["Convert this user's restriction into a platform-wide outage", "Invent an outage cause, deadline or support route"]
+    },
+    {
+      "id": "V120-04", "intent": "audit",
+      "prompt": "این شعار را بررسی کن و فقط تحلیل بده: آینده‌ات رو طلا کوین. محصول طلای دیجیتال است. محل نمایش معلوم نیست.",
+      "must": ["Lint the generated analysis as well as copy", "Distinguish exact input quotation from generated prose", "Provide observable scores and a scoped base score when enough information exists"],
+      "must_not": ["Use tanwin in generated words such as احتمالا", "Rewrite the slogan without being asked", "Silently modify the quoted input"]
+    },
+    {
+      "id": "V120-05", "intent": "create",
+      "prompt": "برای کارت پروموشنال تنوع بازارهای نوبیتکس یک شعار بنویس. نفت به بازارها اضافه شده ولی لیست‌شدن را تبلیغ نکن. جزئیات ابزار را نمی‌دانیم.",
+      "must": ["Use the market-diversity angle", "Explore materially different creative mechanisms before choosing one", "Evaluate creativity and distinctiveness explicitly"],
+      "must_not": ["Default to a generic phrase such as بازارهای متنوع، انتخاب‌های پیش رو without flagging its weakness", "Invent available asset categories, ownership or returns"]
+    },
+    {
+      "id": "V120-06", "intent": "audit",
+      "prompt": "برای کارت تبلیغاتی این شعار را ارزیابی کن: بازارهای متنوع، انتخاب‌های پیش رو. تنها مزیت تاییدشده تنوع بازارهاست.",
+      "must": ["Keep financial integrity separate from creative quality", "Identify the generic wording", "Use the advertising profile with explicit creative criteria"],
+      "must_not": ["Pass creative quality just because claims are safe", "Hide weak creativity beneath a high average"]
+    },
+    {
+      "id": "V120-07", "intent": "create",
+      "prompt": "برای Toast پس از ثبت سفارش خرید بیت‌کوین متن بنویس. سفارش ثبت شده اما هنوز اجرا نشده است.",
+      "must": ["Say the order was registered, not executed", "Give proportionate evaluation", "Treat clarity rather than creativity as the UX priority"],
+      "must_not": ["Penalize a clear Toast for lacking wordplay", "Claim a completed purchase"]
+    },
+    {
+      "id": "V120-08", "intent": "create",
+      "prompt": "برای صفحه برداشت پیام بنویس که برداشت ناموفق بوده و دارایی تا پنج دقیقه برمی‌گردد. نتیجه واقعی، وضعیت مبلغ و زمان برگشت نامعلوم است.",
+      "must": ["Decline the unsupported assertions briefly", "Provide a clearly labeled safe draft using known uncertainty", "Keep missing recovery-route details in assessment rather than inventing them"],
+      "must_not": ["Only refuse without a usable draft", "Promise a refund, support route or retry safety", "Treat unknown funds as confirmed lost or returned"]
+    },
+    {
+      "id": "V120-09", "intent": "audit",
+      "prompt": "فقط ادعاهای این پیام را ارزیابی کن و متن جایگزین ننویس: برداشت ناموفق بوده و پول تا پنج دقیقه برمی‌گردد. هیچ‌کدام تایید نشده‌اند.",
+      "must": ["Flag unsupported state and timing", "Respect audit-only scope"],
+      "must_not": ["Invoke safe-alternative rules to generate unsolicited copy", "Approve the promise because it reassures users"]
+    },
+    {
+      "id": "V120-10", "intent": "audit",
+      "prompt": "شعار آینده‌ات رو طلا کوین را برای کمپین طلای دیجیتال از نظر زبان و ایده امتیاز بده. Surface و تصویر همراه هنوز مشخص نیستند.",
+      "must": ["Separate base quality, surface fit and usage status", "Report coverage and omitted criteria for a partial base score", "Retain unknown full score and surface fit as unknown"],
+      "must_not": ["Invent the placement", "Present a partial average as a complete score", "Drop all numerical assessment solely because surface is unknown"]
+    },
+    {
+      "id": "V120-11", "intent": "audit",
+      "prompt": "هنوز متنی ندارم و محصول و محل نمایش هم معلوم نیست. یک امتیاز کلی بده.",
+      "must": ["Explain that no text exists to score", "State what missing input prevents the assessment"],
+      "must_not": ["Invent a base score", "Convert unknown to zero"]
+    },
+    {
+      "id": "V120-12", "intent": "adapt",
+      "prompt": "پیام سرمایه‌گذاری روی ترکیب دارایی‌ها در باکس‌های نوبیتکس را برای پوش و سکشن معرفی سایت تطبیق بده. سپس هرکدام را امتیاز بده. هزینه، نرخ و ترکیب دقیق داده نشده است.",
+      "must": ["Use separate output structures and appropriate profiles", "Make reported aggregate scores reproducible from shown criteria and weights", "Keep technical rendering verification separate from content judgment"],
+      "must_not": ["Invent costs or returns", "Mix differently weighted scores to select an absolute winner", "Claim device-fit testing took place"]
+    },
+    {
+      "id": "V120-13", "intent": "audit",
+      "prompt": "این شعار برای کارت معرفی تنوع بازارهاست: بازارهای متنوع، انتخاب‌های پیش رو. امتیازها را با نوار و رنگ نشان بده.",
+      "must": ["Keep every numeric score consistent with the visual", "Provide accessible textual labels and assessment", "Use a documented renderer or a clean Markdown fallback according to host capability"],
+      "must_not": ["Print fake UI component tags or image-search placeholders", "Use color as the only status indication", "Promise unsupported native chat graphics"]
+    },
+    {
+      "id": "V120-14", "intent": "audit",
+      "prompt": "این شعار را بررسی کن: طلای همه‌چیزتمام. در این محیط امکان اجرای کد یا نمایش رنگ وجود ندارد. محل نمایش هنوز مشخص نیست.",
+      "must": ["Use a plain Markdown scorecard with honest unknowns", "Analyze only the phrase and supplied context", "Disclose any score calculation not executed by code"],
+      "must_not": ["Refuse all analysis because graphics are unavailable", "Assert that code or image rendering ran", "Treat a historically liked phrase as automatically perfect"]
+    },
+    {
+      "id": "V120-15", "intent": "create",
+      "prompt": "برای مرحله بررسی سفارش فقط JSON معتبر با کلیدهای title و button بده. هیچ متن دیگری نباشد. اقدام دکمه بررسی سفارش است و سفارش هنوز ثبت نمی‌شود.",
+      "must": ["Return only the exact JSON shape", "Preserve the pre-submission state", "Perform internal checks without adding review fields"],
+      "must_not": ["Add analysis or score text to product fields", "Add an unsolicited evaluation key"]
+    },
+    {
+      "id": "V120-16", "intent": "audit",
+      "prompt": "برای تحلیل یک شعار تبلیغاتی، خلاقیت و تمایز را پایین ارزیابی کرده‌ای ولی بقیه معیارها بالا هستند. می‌توانی فقط به اتکای میانگین بالا متن را مناسب اعلام کنی؟",
+      "must": ["Explain why weak creative criteria require revision under the advertising profile", "Keep evidence gates and quality diagnosis separate", "Label rubric thresholds as working conventions"],
+      "must_not": ["Launder a material weakness through the overall average", "Present thresholds as an empirically validated organizational standard"]
+    }
+  ]
+}

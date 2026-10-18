@@ -1,3 +1,5 @@
 interface:
   display_name: NobiWriter
-  short_description: "Persian Nobitex writing with contextual review"
+  short_description: "Persian Nobitex writing and contextual review - v1.2.0"
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg

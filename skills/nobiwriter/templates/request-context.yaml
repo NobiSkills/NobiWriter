@@ -1,5 +1,4 @@
-# قالب داخلی است. از کاربر نخواهید همه فیلدها را پر کند.
-# null یعنی نامعلوم، نه صفر یا نبود قابلیت.
+# قالب داخلی، نه فرم اجباری کاربر. null یعنی نامعلوم، نه صفر.
 request:
   primary_intent: null # create | edit | audit | optimize | adapt | plan
   secondary_intents: []
@@ -10,6 +9,7 @@ request:
   preserve_exact: []
   requested_option_count: null
   deliverable_format: null
+  explicit_no_analysis: false
 business_context:
   primary_domain: null
   secondary_domains: []
@@ -18,8 +18,8 @@ business_context:
   asset_or_market: null
   value_angle: null
   prohibited_angle: null
-  message_level: null # brand | portfolio | domain | product | feature | transaction_state
-  product_facts: [] # هر مورد: متن، منبع، تاریخ، دامنه، وضعیت تایید
+  message_level: null
+  product_facts: []
   conflicting_facts: []
 audience:
   need: null
@@ -28,7 +28,7 @@ audience:
   emotional_or_financial_state: null
   journey_stage: null
 placement:
-  environment: null # web | PWA | Android | iOS | unknown
+  environment: null
   rollout_scope: null
   channel: null
   touchpoint: null
@@ -44,19 +44,29 @@ placement:
     max_lines: null
     exposure_time: null
     source: null
-  writing_budget_proposal: null # جدا از محدودیت فنی
+  writing_budget_proposal: null
 resolution:
-  intent_basis: null # explicit | limited_inference | unknown
+  intent_basis: null
   product_basis: null
   placement_basis: null
   disclosed_assumptions: []
   critical_missing_facts: []
 evaluation:
+  rubric_version: 1.2.0
   profile: null
-  gates: []
-  criteria: {} # برای هر معیار: score و reason
-  quality_score: null
+  gates: {}
+  criteria: {}
+  base_score: null
+  base_coverage_percent: null
+  base_excluded: []
+  surface_score: null
+  overall_score: null
   readiness: null
   readiness_reason: null
+  needs_revision: false
+  needs_verification: false
+  generated_copy_lint_passed: null
+  generated_analysis_lint_passed: null
+  visual_mode: null # markdown | supported-native | svg
   technical_fit_tested: false
   empirical_effectiveness_tested: false
