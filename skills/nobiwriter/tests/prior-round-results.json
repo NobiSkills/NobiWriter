@@ -1,0 +1,19 @@
+{
+  "source": "User-reported manual tests in the NobiWriter project conversation",
+  "tested_version": "pre-1.2.0; exact installed package and model not recorded",
+  "execution_date": null,
+  "new_version_executed": false,
+  "note": "Reported verdicts are retained. Review findings are not silently substituted for the user's verdict. These ten manual tests are not the R01-R22 suite and do not certify version 1.2.0.",
+  "runs": [
+    {"id":"manual-T01","reported_result":"FAIL","review_findings":["Missing rationale, score and usage status"],"source_excerpt":"صعود یا نزول طلا، دو مسیر برای معامله"},
+    {"id":"manual-T02","reported_result":"PASS","review_findings":["Requested a visual scorecard instead of plain presentation"],"source_excerpt":null},
+    {"id":"manual-T03","reported_result":"PASS","review_findings":[],"source_excerpt":null},
+    {"id":"manual-T04","reported_result":"PASS","review_findings":["User identified forbidden tanwin in generated copy; prior review classified this as a failure under the hard writing rule","Correcting pronouns must not turn a user restriction into a platform-wide outage"],"source_excerpt":"در حال حاضر امکان برداشت ریالی ندارید. لطفاً در زمان دیگری دوباره اقدام کنید."},
+    {"id":"manual-T05","reported_result":"PASS","review_findings":[],"source_excerpt":null},
+    {"id":"manual-T06","reported_result":"PASS","review_findings":["Generic, overly cautious promotional copy; creativity and distinctiveness need explicit evaluation"],"source_excerpt":"بازارهای متنوع، انتخاب‌های پیش رو"},
+    {"id":"manual-T07","reported_result":"PASS","review_findings":["Positive example: registration is not confused with execution; compact evaluation present"],"source_excerpt":"سفارش خرید بیت‌کوین ثبت شد."},
+    {"id":"manual-T08","reported_result":"PASS","review_findings":["A safe uncertainty statement was present, but user wanted a clearer usable alternative rather than an assessment dominated by limitations","Do not infer failed withdrawal, refund timing or recovery routes"],"source_excerpt":"وضعیت نهایی برداشت مشخص نیست. زمان بازگشت احتمالی دارایی نیز مشخص نیست."},
+    {"id":"manual-T09","reported_result":"PASS","review_findings":["Different surfaces used different structures","Only selected criterion scores were shown, so the reported 8.6 and 8.8 totals were not reproducible from the displayed values","Promotional creativity remained limited"],"source_excerpt":null},
+    {"id":"manual-T10","reported_result":"PASS","review_findings":["Separate base quality from missing surface context instead of withholding all aggregates","The generated analysis also contains tanwin; lint must cover both copy and analysis"],"source_excerpt":"برای مخاطب تازه‌وارد، «طلا کوین» می‌تواند نام یک توکن یا محصول تلقی شود. مخاطب آشنا با رمزارز احتمالاً بازی «کن/کوین» را می‌فهمد."}
+  ]
+}

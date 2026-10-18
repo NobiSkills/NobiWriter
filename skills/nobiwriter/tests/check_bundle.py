@@ -1,140 +1,121 @@
 #!/usr/bin/env python3
-"""Static checks only. This does not execute a model or a product UI."""
+"""Check bundle structure and rubric metadata. Does not execute a model."""
 from __future__ import annotations
 import argparse
+import ast
 import json
 import re
 import sys
 from pathlib import Path
-from typing import Mapping
+from urllib.parse import unquote
 
-CRITERIA = {'brand_voice', 'product_relevance', 'clarity', 'surface_fit', 'language', 'task_effectiveness'}
-FAMILIES = {'advertising', 'ux', 'product', 'operational', 'educational'}
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+from quality_tools import load_config
+
 INTENTS = {'create', 'edit', 'audit', 'optimize', 'adapt', 'plan'}
+REQUIRED_REFS = [
+    'intent-routing.md', 'product-taxonomy.md', 'touchpoint-surface-map.md',
+    'evaluation-framework.md', 'evaluation-profiles.json', 'output-contract.md',
+    'brand-voice.md', 'claims.md', 'vocabulary.md', 'product-rules.md',
+    'copywriting-and-landings.md', 'ux-and-microcopy-patterns.md', 'review.md',
+    'gold-campaign-exemplar.md', 'creative-quality.md', 'safe-alternatives.md',
+    'final-copy-lint.md', 'visual-evaluation.md',
+]
 
 
-def quality_score(scores: Mapping[str, int | None], weights: Mapping[str, int]) -> float | None:
-    if set(scores) != CRITERIA or set(weights) != CRITERIA:
-        raise ValueError('Exactly six declared criteria are required.')
-    if any(type(w) is not int or w <= 0 for w in weights.values()) or sum(weights.values()) != 100:
-        raise ValueError('Weights must be positive integers summing to 100.')
-    for score in scores.values():
-        if score is not None and (type(score) is not int or not 0 <= score <= 10):
-            raise ValueError('A criterion must be an integer from 0 to 10 or null.')
-    if any(score is None for score in scores.values()):
-        return None
-    return round(sum(scores[k] * weights[k] for k in CRITERIA) / 100, 1)
-
-
-def usage_status(gates: list[str], material_copy_issue: bool = False) -> str:
-    allowed = {'pass', 'fail', 'unknown', 'not_applicable'}
-    if not gates or any(g not in allowed for g in gates):
-        raise ValueError('Provide valid gate states.')
-    if 'fail' in gates:
-        return 'blocked_current_wording'
-    if 'unknown' in gates:
-        return 'needs_verification'
-    if material_copy_issue:
-        return 'needs_revision'
-    return 'suitable_for_defined_context'
-
-
-def validate(root: Path) -> dict:
+def validate(root: Path = ROOT) -> dict:
     root = root.resolve()
-    errors: list[str] = []
-    core = root / 'SKILL.md'
-    if not core.is_file():
-        raise ValueError('Missing SKILL.md')
-    text = core.read_text(encoding='utf-8')
-    front = re.match(r'^---\n(.*?)\n---\n', text, re.S)
-    if not front or not re.search(r'^name:\s*nobiwriter\s*$', front.group(1), re.M):
-        errors.append('Invalid name/frontmatter')
-    if len(text.splitlines()) >= 500:
-        errors.append('SKILL.md exceeds the compact-entrypoint target')
-    required = [
-        'references/intent-routing.md', 'references/product-taxonomy.md',
-        'references/touchpoint-surface-map.md', 'references/evaluation-framework.md',
-        'references/evaluation-profiles.json', 'references/output-contract.md',
-        'references/brand-voice.md', 'references/claims.md', 'references/vocabulary.md',
-        'references/product-rules.md', 'references/copywriting-and-landings.md',
-        'references/ux-and-microcopy-patterns.md', 'references/review.md',
-        'references/gold-campaign-exemplar.md', 'templates/request-context.yaml',
-        'tests/routing-evaluation-cases.json', 'tests/README.md',
-        'tests/results-template.json', 'agents/openai.yaml',
-    ]
-    for rel in required:
-        p = root / rel
+    errors = []
+    required = ['SKILL.md', 'VERSION', 'agents/openai.yaml', 'assets/icon.svg',
+                'scripts/quality_tools.py', 'scripts/render_scorecard.py',
+                'templates/request-context.yaml', 'templates/evaluation-record.json',
+                'tests/README.md', 'tests/results-template.json',
+                'tests/prior-round-results.json', 'tests/routing-evaluation-cases.json',
+                'tests/release-1.2.0-cases.json', 'tests/test_quality_tools.py']
+    required += ['references/' + name for name in REQUIRED_REFS]
+    for name in required:
+        p = root / name
         if not p.is_file() or p.is_symlink():
-            errors.append(f'Missing/unsafe required file: {rel}')
-        if rel.startswith('references/') and f']({rel})' not in text:
-            errors.append(f'No direct entrypoint link: {rel}')
-    local_links = 0
-    for md in root.rglob('*.md'):
-        if md.is_symlink():
+            errors.append('Missing or unsafe file: ' + name)
+    if errors:
+        return {'static_validation': 'failed', 'errors': errors}
+    core = (root / 'SKILL.md').read_text(encoding='utf-8')
+    front = re.match(r'^---\n(.*?)\n---\n', core, re.S)
+    if not front or set(re.findall(r'^(\w+):', front.group(1), re.M)) != {'name', 'description'}:
+        errors.append('Expected name/description YAML frontmatter only')
+    elif not re.search(r'^name:\s*nobiwriter\s*$', front.group(1), re.M):
+        errors.append('Invalid skill name')
+    if len(core.splitlines()) >= 500:
+        errors.append('Entrypoint exceeds the compact 500-line target')
+    for name in REQUIRED_REFS:
+        if '](references/' + name + ')' not in core:
+            errors.append('Missing direct entrypoint reference: ' + name)
+    links = 0
+    python_files = 0
+    for p in root.rglob('*'):
+        if '__pycache__' in p.parts:
             continue
-        body = md.read_text(encoding='utf-8')
-        for target in re.findall(r'\[[^\]\n]*\]\(([^)\s]+)\)', body):
-            if re.match(r'^[a-zA-Z][a-zA-Z0-9+.-]*:', target) or target.startswith('#'):
-                continue
-            target = target.split('#', 1)[0]
-            if not target:
-                continue
-            candidate = (md.parent / target).resolve()
-            local_links += 1
-            if not candidate.is_relative_to(root) or not candidate.exists():
-                errors.append(f'Broken/out-of-bundle link in {md.relative_to(root)}: {target}')
-    profile = json.loads((root / 'references/evaluation-profiles.json').read_text(encoding='utf-8'))
-    if set(profile['profiles']) != FAMILIES:
-        errors.append('Unexpected profile families')
-    for name, weights in profile['profiles'].items():
-        try:
-            assert quality_score(dict.fromkeys(CRITERIA, 8), weights) == 8.0
-            partial = dict.fromkeys(CRITERIA, 8)
-            partial['surface_fit'] = None
-            assert quality_score(partial, weights) is None
-            mixed = dict.fromkeys(CRITERIA, 8)
-            mixed['clarity'] = 10
-            assert quality_score(mixed, weights) == round(8 + 2 * weights['clarity'] / 100, 1)
-            try:
-                quality_score(dict.fromkeys(CRITERIA, True), weights)
-                errors.append(f'{name}: boolean accepted as a score')
-            except ValueError:
-                pass
-        except (AssertionError, ValueError) as exc:
-            errors.append(f'Profile failure: {name}: {exc}')
-    assert usage_status(['pass', 'fail']) == 'blocked_current_wording'
-    assert usage_status(['unknown', 'fail']) == 'blocked_current_wording'
-    assert usage_status(['pass', 'unknown']) == 'needs_verification'
-    assert usage_status(['pass'], True) == 'needs_revision'
-    assert usage_status(['pass', 'not_applicable']) == 'suitable_for_defined_context'
-    suite = json.loads((root / 'tests/routing-evaluation-cases.json').read_text(encoding='utf-8'))
-    ids = [c['id'] for c in suite['cases']]
-    if len(ids) != len(set(ids)):
-        errors.append('Duplicate regression test IDs')
-    for case in suite['cases']:
-        if case['intent'] not in INTENTS or not case['must'] or not case['must_not']:
-            errors.append(f'Incomplete behavioral case: {case["id"]}')
-    result = {'static_validation': 'passed' if not errors else 'failed',
-              'local_links_checked': local_links,
-              'quality_profiles_checked': len(profile['profiles']),
-              'behavioral_cases_defined': len(ids),
-              'behavioral_cases_executed': 0,
-              'model_behavior_validated': False,
-              'errors': errors}
-    return result
+        if p.is_symlink():
+            errors.append('Non-portable symlink: ' + str(p.relative_to(root)))
+            continue
+        if not p.is_file():
+            continue
+        if p.suffix in {'.md', '.json', '.yaml', '.yml', '.py'}:
+            text = p.read_text(encoding='utf-8')
+            if re.search(r'^(?:<{7}|={7}|>{7})(?: |$)', text, re.M):
+                errors.append('Unresolved conflict: ' + str(p.relative_to(root)))
+            if p.suffix == '.json':
+                json.loads(text)
+            if p.suffix == '.py':
+                ast.parse(text, filename=str(p), feature_version=(3, 9))
+                python_files += 1
+            if p.suffix == '.md':
+                for target in re.findall(r'\[[^\]\n]*\]\(([^)\s]+)\)', text):
+                    if re.match(r'^[a-zA-Z][a-zA-Z0-9+.-]*:', target) or target.startswith('#'):
+                        continue
+                    target = unquote(target.split('#', 1)[0])
+                    candidate = (p.parent / target).resolve()
+                    links += 1
+                    if not candidate.is_relative_to(root) or not candidate.exists():
+                        errors.append(f'Broken/out-of-bundle link: {p.relative_to(root)} -> {target}')
+    config = load_config(root / 'references/evaluation-profiles.json')
+    version = (root / 'VERSION').read_text(encoding='utf-8').strip()
+    if version != config['version'] or version not in core:
+        errors.append('Bundle version mismatch')
+    cases = []
+    for name in ('routing-evaluation-cases.json', 'release-1.2.0-cases.json'):
+        suite = json.loads((root / 'tests' / name).read_text(encoding='utf-8'))
+        if name == 'release-1.2.0-cases.json' and suite['version'] != version:
+            errors.append('Test suite version mismatch: ' + name)
+        for case in suite['cases']:
+            if case.get('intent') not in INTENTS or not case.get('prompt') or not case.get('must') or not case.get('must_not'):
+                errors.append('Incomplete case: ' + str(case.get('id')))
+            cases.append(case['id'])
+    if len(cases) != len(set(cases)):
+        errors.append('Duplicate behavioral test ID')
+    result_template = json.loads((root / 'tests/results-template.json').read_text(encoding='utf-8'))
+    if result_template['skill_version'] != version or {r['case_id'] for r in result_template['runs']} != set(cases):
+        errors.append('Result template does not cover the current suite')
+    return {'static_validation': 'passed' if not errors else 'failed', 'version': version,
+            'local_links_checked': links, 'quality_profiles_checked': len(config['profiles']),
+            'python_files_parsed_for_3_9': python_files, 'behavioral_cases_defined': len(cases),
+            'behavioral_cases_executed_in_this_command': 0, 'model_behavior_validated': False,
+            'errors': errors}
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('skill_directory', nargs='?', default=str(Path(__file__).resolve().parents[1]))
+    parser.add_argument('skill_directory', nargs='?', type=Path, default=ROOT)
     args = parser.parse_args()
     try:
-        result = validate(Path(args.skill_directory))
-    except (ValueError, KeyError, OSError, json.JSONDecodeError, AssertionError) as exc:
+        result = validate(args.skill_directory)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return int(bool(result['errors']))
+    except (ValueError, KeyError, TypeError, OSError, SyntaxError) as exc:
         print(f'Static validation failed: {exc}', file=sys.stderr)
         return 1
-    print(json.dumps(result, ensure_ascii=False, indent=2))
-    return 0 if not result['errors'] else 1
+
 
 if __name__ == '__main__':
     sys.exit(main())
