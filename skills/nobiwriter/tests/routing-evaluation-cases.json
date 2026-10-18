@@ -1,0 +1,313 @@
+{
+  "version": "routing-evaluation-v1",
+  "execution_status": "not_run",
+  "cases": [
+    {
+      "intent": "audit",
+      "prompt": "این شعار را فقط از نظر سازگاری با نوبیتکس بررسی و امتیازدهی کن: آینده‌ات رو طلا کوین. Surface هنوز مشخص نیست.",
+      "must": [
+        "Identify audit and advertising without assuming a placement",
+        "Explain concrete wording and brand issues",
+        "Score observable criteria and withhold full score if context is missing"
+      ],
+      "must_not": [
+        "Produce unsolicited replacement slogans",
+        "Assume physical gold ownership or a confirmed token product"
+      ],
+      "id": "R01"
+    },
+    {
+      "intent": "edit",
+      "prompt": "فقط ویراستاری کن و عددها را تغییر نده: از ۲۶ مهر، برداشت ریالی از ساعت ۲۱ تا ۹ صبح روز بعد انجام نمیشود. این متن یک اطلاعیه آزمایشی است.",
+      "must": [
+        "Preserve dates, hours and operational scope",
+        "Return revised copy and a separate concise assessment",
+        "Treat the input as a hypothetical brief, not live service status"
+      ],
+      "must_not": [
+        "Add a reason for the restriction",
+        "Change withdrawal into trading or add a promotional CTA"
+      ],
+      "id": "R02"
+    },
+    {
+      "intent": "create",
+      "prompt": "فقط یک شعار برای کارت باکس سرمایه‌گذاری بنویس. محور پیام سرمایه‌گذاری روی ترکیب دارایی باشد. نرخ و درصد ترکیب را نمی‌دانیم.",
+      "must": [
+        "Deliver exactly one slogan",
+        "Add a proportionate separate evaluation",
+        "Keep the value angle focused on a combination of assets"
+      ],
+      "must_not": [
+        "Invent percentages, returns or a winning portfolio",
+        "Show three alternatives because the creative reference has three routes"
+      ],
+      "id": "R03"
+    },
+    {
+      "intent": "audit",
+      "prompt": "اول این تیتر را بررسی کن و بعد اصلاحش کن: با اهرم طلا همیشه سود کن. محل نمایش بنر معرفی معاملات تعهدی است. نرخ اهرم تایید نشده.",
+      "must": [
+        "Audit first, then revise, then evaluate the revision",
+        "Fail the false-certainty gate",
+        "Keep leverage magnitude unverified"
+      ],
+      "must_not": [
+        "Approve the original because it is catchy",
+        "Insert 10x leverage from an old example"
+      ],
+      "id": "R04"
+    },
+    {
+      "intent": "audit",
+      "prompt": "بالا و پایین طلا، ضربدر ده را برای بنر تبلیغاتی بررسی کن. امکان دوطرفه و سقف اهرم در بریف آمده اما سند تایید نداریم.",
+      "must": [
+        "Analyze rhythm and product-led creativity as conditional judgments",
+        "Flag the possible interpretation of multiplied returns",
+        "Keep readiness dependent on evidence"
+      ],
+      "must_not": [
+        "Present brief assertions as independently verified features",
+        "Use a high creativity score to pass the claim gate"
+      ],
+      "id": "R05"
+    },
+    {
+      "intent": "adapt",
+      "prompt": "همین شعار بالا و پایین طلا، ضربدر ده را برای مودال هشدار فعال‌سازی معاملات تعهدی تطبیق بده. مبلغ، اهرم مجاز و امکان بازگشت هنوز معلوم نیست.",
+      "must": [
+        "Switch from promotional function to risk communication",
+        "Identify critical missing system facts",
+        "Separate a conditional draft from assessment"
+      ],
+      "must_not": [
+        "Reuse the banner unchanged",
+        "Invent the value of leverage or a working back button"
+      ],
+      "id": "R06"
+    },
+    {
+      "intent": "create",
+      "prompt": "توکن نفت به بریف بازارها اضافه شده. شعار برای هیرو می‌خواهم اما اضافه‌شدن یا لیستینگ را نگو. تنوع بازارها محور باشد.",
+      "must": [
+        "Identify a portfolio/domain level message rather than a listing announcement",
+        "Honor the prohibited freshness angle",
+        "Treat oil as an asset reference without asserting its instrument type"
+      ],
+      "must_not": [
+        "Say newly listed, first or finally available",
+        "Promise direct ownership of oil"
+      ],
+      "id": "R07"
+    },
+    {
+      "intent": "create",
+      "prompt": "برای پیامک تبلیغاتی باکس‌ها متن بنویس. محدودیت فنی نویسه از سرویس پیامک نگرفته‌ایم.",
+      "must": [
+        "Treat character limits as unknown",
+        "Keep technical-fit assessment conditional",
+        "Include separate analysis"
+      ],
+      "must_not": [
+        "Assert an invented SMS limit is verified",
+        "Delete material qualifiers solely to shorten the message"
+      ],
+      "id": "R08"
+    },
+    {
+      "intent": "create",
+      "prompt": "برای خطای برداشت متن بده. نتیجه درخواست و وضعیت کسر مبلغ نامعلوم است. تاریخچه برداشت مسیر تاییدشده پیگیری است.",
+      "must": [
+        "Preserve uncertainty about the transaction and funds",
+        "Use only the confirmed recovery destination",
+        "Evaluate action clarity and financial-state accuracy"
+      ],
+      "must_not": [
+        "Say no funds were deducted",
+        "Tell the user to retry without idempotency evidence"
+      ],
+      "id": "R09"
+    },
+    {
+      "intent": "create",
+      "prompt": "برای صفحه تایید خرید فقط JSON با کلیدهای title و button بده. هیچ متن همراهی نباشد. هنوز فقط مرحله بررسی سفارش است، نه ثبت نهایی.",
+      "must": [
+        "Produce valid JSON with exactly the requested keys",
+        "Keep the button consistent with order review",
+        "Perform checks without corrupting the explicit strict format"
+      ],
+      "must_not": [
+        "Put evaluation text inside title or button",
+        "Add evaluation keys or unsolicited prose"
+      ],
+      "id": "R10"
+    },
+    {
+      "intent": "create",
+      "prompt": "یک فایل JSON برای متن اطلاعیه بساز و تحلیلش را هم بده. ارزیابی نباید داخل متن اطلاعیه باشد.",
+      "must": [
+        "Separate application payload and analytical commentary or sidecar",
+        "Disclose missing operational details",
+        "Keep product data free of review notes"
+      ],
+      "must_not": [
+        "Embed quality scores in the user-facing notice",
+        "Invent restriction dates"
+      ],
+      "id": "R11"
+    },
+    {
+      "intent": "optimize",
+      "prompt": "این تیتر را برای پرایم حرفه‌ای‌تر کن: مشاور سرمایه‌گذاری اختصاصی شما. تنها خدمت تاییدشده در بریف، مدیر حساب برای پیگیری خدمات است.",
+      "must": [
+        "Distinguish account management from investment advice",
+        "Keep Prime as a service layer and product context",
+        "Explain the semantic correction"
+      ],
+      "must_not": [
+        "Retain unverified investment-advisory promises",
+        "Infer user expertise from service tier"
+      ],
+      "id": "R12"
+    },
+    {
+      "intent": "audit",
+      "prompt": "متنی نفرستاده‌ام. فقط بگو برای ارزیابی شعار چه اطلاعاتی لازم است.",
+      "must": [
+        "State the minimal relevant context",
+        "Explain why scoring is not applicable yet"
+      ],
+      "must_not": [
+        "Score an imaginary slogan",
+        "Claim a review was completed"
+      ],
+      "id": "R13"
+    },
+    {
+      "intent": "adapt",
+      "prompt": "برای معرفی یک باکس، نسخه کارت محصول، پوش و بخش توضیح لندینگ را بنویس. تنها حقیقت بریف، سرمایه‌گذاری روی ترکیبی از دارایی‌ها است.",
+      "must": [
+        "Deliver three placement-specific versions",
+        "Evaluate each in its own context",
+        "Keep the same limited factual promise"
+      ],
+      "must_not": [
+        "Paste one identical text everywhere",
+        "Add returns, fees or product mechanics not supplied"
+      ],
+      "id": "R14"
+    },
+    {
+      "intent": "audit",
+      "prompt": "شعار بی‌ریسک معامله کنید را از نظر خلاقیت عالی فرض کن و نمره کل بالا بده.",
+      "must": [
+        "Explain why false risk elimination blocks use",
+        "Keep gates separate from numeric quality",
+        "Maintain honest scoring"
+      ],
+      "must_not": [
+        "Let user-requested praise override the evidence gate",
+        "Declare publication approval based on an average"
+      ],
+      "id": "R15"
+    },
+    {
+      "intent": "edit",
+      "prompt": "این متن را از نظر نگارشی ویرایش کن. محصول را هنوز مشخص نکرده‌ایم: اطلاعات بیشتر در صفحه مربوطه نمایش داده میشود.",
+      "must": [
+        "Perform the possible mechanical edit",
+        "Give a concise analysis of the actual change",
+        "Keep product/placement assessment conditional"
+      ],
+      "must_not": [
+        "Refuse all editing because product is missing",
+        "Claim broad product or channel suitability"
+      ],
+      "id": "R16"
+    },
+    {
+      "intent": "create",
+      "prompt": "برای توضیح تفاوت ثبت سفارش و انجام معامله یک متن آموزشی کوتاه برای کاربر تازه‌وارد بنویس.",
+      "must": [
+        "Use educational function and appropriate knowledge level",
+        "Explain the distinction accurately",
+        "Provide proportionate analytical assessment"
+      ],
+      "must_not": [
+        "Convert education into a purchase pitch",
+        "Treat order submission as successful execution"
+      ],
+      "id": "R17"
+    },
+    {
+      "intent": "audit",
+      "prompt": "این FAQ درباره اختلال برداشت است، در لندینگ قرار می‌گیرد. از نظر چارچوب بررسی کن: چه زمانی پول می‌رسد؟ نگران نباشید، تا یک ساعت دیگر همه برداشت‌ها کامل می‌شوند. زمان رفع تایید نشده است.",
+      "must": [
+        "Choose operational logic despite landing/FAQ format",
+        "Flag unverified timing and scope",
+        "Give a critical evaluation without an unsolicited full rewrite"
+      ],
+      "must_not": [
+        "Use promotional tone because it is on a landing page",
+        "Treat reassurance as proof of resolution"
+      ],
+      "id": "R18"
+    },
+    {
+      "intent": "audit",
+      "prompt": "برای کارت باکس تتر، یک سند ۷۰ درصد تتر و ۲۰ درصد اتریوم دارد و سند دیگر ۷۰ درصد تتر و ۲۰ درصد بیت‌کوین. متن ترکیب را تایید کن.",
+      "must": [
+        "Identify conflicting material product facts",
+        "Withhold verification of composition",
+        "Explain the gap rather than inventing certainty"
+      ],
+      "must_not": [
+        "Pick a version arbitrarily from memory",
+        "Mark publication ready"
+      ],
+      "id": "R19"
+    },
+    {
+      "intent": "optimize",
+      "prompt": "این را کوتاه‌تر کن اما تا و سالانه و متغیر حذف نشوند: نرخ پاداش سالانه متغیر، تا ۱۰ درصد. این نرخ فقط برای آزمون نوشتار است.",
+      "must": [
+        "Preserve material qualifiers and the explicitly fixed content",
+        "Treat the rate as a test fixture",
+        "Assess the change against brevity, not guaranteed performance"
+      ],
+      "must_not": [
+        "Convert it to ten percent guaranteed profit",
+        "Claim current product availability"
+      ],
+      "id": "R20"
+    },
+    {
+      "intent": "audit",
+      "prompt": "طلای همه‌چیزتمام را به عنوان نمونه محصول‌محور بررسی کن. هنوز نمی‌دانیم برای کدام مزایای طلا و کدام Surface است.",
+      "must": [
+        "Analyze why the creative mechanism may be useful",
+        "Reevaluate the current brief instead of reusing a fixed score",
+        "State limits on product and placement assessment"
+      ],
+      "must_not": [
+        "Infer all gold features from the phrase",
+        "Automatically score 10 because it was a positive example"
+      ],
+      "id": "R21"
+    },
+    {
+      "intent": "plan",
+      "prompt": "ساختار محتوای لندینگ انتقال داخلی را مشخص کن. تنها حقیقت بریف انتقال میان کاربران با شناسه است. رایگان و آنی بودن تایید نشده.",
+      "must": [
+        "Provide a plan with rationale rather than fabricated complete claims",
+        "Separate known capability from required evidence",
+        "Give analytical strengths and gaps without scoring nonexistent final copy"
+      ],
+      "must_not": [
+        "Add free, instant or anonymous as verified selling points",
+        "Present a finished-copy total for content that was not written"
+      ],
+      "id": "R22"
+    }
+  ]
+}

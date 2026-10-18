@@ -1,0 +1,62 @@
+# قالب داخلی است. از کاربر نخواهید همه فیلدها را پر کند.
+# null یعنی نامعلوم، نه صفر یا نبود قابلیت.
+request:
+  primary_intent: null # create | edit | audit | optimize | adapt | plan
+  secondary_intents: []
+  content_family: null # advertising | ux | product | operational | educational
+  message_function: null
+  source_text: null
+  desired_change: null
+  preserve_exact: []
+  requested_option_count: null
+  deliverable_format: null
+business_context:
+  primary_domain: null
+  secondary_domains: []
+  product: null
+  feature: null
+  asset_or_market: null
+  value_angle: null
+  prohibited_angle: null
+  message_level: null # brand | portfolio | domain | product | feature | transaction_state
+  product_facts: [] # هر مورد: متن، منبع، تاریخ، دامنه، وضعیت تایید
+  conflicting_facts: []
+audience:
+  need: null
+  knowledge_level: null
+  service_tier: null
+  emotional_or_financial_state: null
+  journey_stage: null
+placement:
+  environment: null # web | PWA | Android | iOS | unknown
+  rollout_scope: null
+  channel: null
+  touchpoint: null
+  surface: null
+  medium: null
+  components: []
+  preceding_context: null
+  adjacent_copy: null
+  visual_role: null
+  action_destination: null
+  technical_limits:
+    max_characters: null
+    max_lines: null
+    exposure_time: null
+    source: null
+  writing_budget_proposal: null # جدا از محدودیت فنی
+resolution:
+  intent_basis: null # explicit | limited_inference | unknown
+  product_basis: null
+  placement_basis: null
+  disclosed_assumptions: []
+  critical_missing_facts: []
+evaluation:
+  profile: null
+  gates: []
+  criteria: {} # برای هر معیار: score و reason
+  quality_score: null
+  readiness: null
+  readiness_reason: null
+  technical_fit_tested: false
+  empirical_effectiveness_tested: false

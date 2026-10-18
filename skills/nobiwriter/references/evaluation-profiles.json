@@ -1,0 +1,74 @@
+{
+  "version": "routing-evaluation-v1",
+  "status": "working_rubric_not_empirically_validated",
+  "scale": {
+    "min": 0,
+    "max": 10,
+    "integer_criteria": true
+  },
+  "criteria": [
+    "brand_voice",
+    "product_relevance",
+    "clarity",
+    "surface_fit",
+    "language",
+    "task_effectiveness"
+  ],
+  "profiles": {
+    "advertising": {
+      "brand_voice": 15,
+      "product_relevance": 20,
+      "clarity": 15,
+      "surface_fit": 15,
+      "language": 10,
+      "task_effectiveness": 25
+    },
+    "ux": {
+      "brand_voice": 10,
+      "product_relevance": 15,
+      "clarity": 25,
+      "surface_fit": 20,
+      "language": 10,
+      "task_effectiveness": 20
+    },
+    "product": {
+      "brand_voice": 10,
+      "product_relevance": 20,
+      "clarity": 20,
+      "surface_fit": 15,
+      "language": 10,
+      "task_effectiveness": 25
+    },
+    "operational": {
+      "brand_voice": 10,
+      "product_relevance": 10,
+      "clarity": 30,
+      "surface_fit": 20,
+      "language": 10,
+      "task_effectiveness": 20
+    },
+    "educational": {
+      "brand_voice": 10,
+      "product_relevance": 15,
+      "clarity": 25,
+      "surface_fit": 15,
+      "language": 10,
+      "task_effectiveness": 25
+    }
+  },
+  "gate_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+  ],
+  "readiness_states": [
+    "blocked_current_wording",
+    "needs_verification",
+    "needs_revision",
+    "suitable_for_defined_context"
+  ],
+  "formula": "sum(score_i * weight_i) / 100",
+  "missing_criterion": "return null total; never invent, use zero or renormalize missing data",
+  "readiness_not_derived_from_average": true
+}
