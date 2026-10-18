@@ -1,5 +1,15 @@
 # دریافت و نصب
 
+## دریافت نسخه منتشرشده از GitHub Releases
+
+[دانلود مستقیم ZIP آخرین نسخه](https://github.com/piwoinjast/NobiWriter/releases/latest/download/nobiwriter-skill.zip) · [فهرست Releaseها](https://github.com/piwoinjast/NobiWriter/releases)
+
+بسته با نام `nobiwriter-skill.zip` منتشر می‌شود و شامل پوشه `nobiwriter` و فایل `SKILL.md` است. این لینک فقط پس از انتشار اولین Release فعال می‌شود. چون مخزن فعلا خصوصی است، دسترسی به دانلود نیز به مجوز GitHub نیاز دارد.
+
+برای انتشار نسخه جدید، ابتدا تغییرات را در `main` ادغام کنید. مقدار دو فایل `VERSION` باید با شماره نسخه هماهنگ باشد. سپس تگ نسخه مانند `v1.2.0` را روی کامیت تاییدشده ایجاد و به GitHub ارسال کنید. گردش‌کار `.github/workflows/release.yml` تست‌ها را اجرا می‌کند، بسته نصب را می‌سازد و آن را به GitHub Release پیوست می‌کند. امکان اجرای دستی گردش‌کار با تگ موجود نیز فراهم است. اگر Release همان تگ قبلا وجود داشته باشد، گردش‌کار آن را بازنویسی نمی‌کند.
+
+لینک نسخه ثابت نیز به شکل `https://github.com/piwoinjast/NobiWriter/releases/download/v1.2.0/nobiwriter-skill.zip` خواهد بود. دریافت بسته جدید، نصب‌های قبلی در ChatGPT را خودکار به‌روزرسانی نمی‌کند.
+
 ## محیط‌های دارای پوشه اسکیل
 
 مخزن را با حساب دارای دسترسی دریافت کنید:

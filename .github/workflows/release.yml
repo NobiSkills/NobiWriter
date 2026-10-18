@@ -1,0 +1,94 @@
+name: Publish skill release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Existing version tag, for example v1.2.0'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skill-release-${{ github.event.inputs.tag || github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Resolve release tag
+        id: version
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_TAG: ${{ inputs.tag }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
+            TAG="$INPUT_TAG"
+          else
+            TAG="$REF_NAME"
+          fi
+          if [[ ! "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Invalid release tag: $TAG" >&2
+            exit 1
+          fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.version.outputs.tag }}
+          persist-credentials: true
+      - name: Confirm tag matches both version files
+        env:
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          set -euo pipefail
+          EXPECTED="${RELEASE_TAG#v}"
+          test "$(tr -d '\r\n' < VERSION)" = "$EXPECTED"
+          test "$(tr -d '\r\n' < skills/nobiwriter/VERSION)" = "$EXPECTED"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install validation dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Validate repository
+        run: python scripts/validate_repository.py
+      - name: Validate portable skill
+        run: python skills/nobiwriter/tests/check_bundle.py
+      - name: Run mechanical tests
+        run: python -m unittest discover -s skills/nobiwriter/tests -p 'test_*.py' -v
+      - name: Build installable ZIP
+        run: python scripts/package_skill.py
+      - name: Verify ZIP layout and rename release asset
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          source = Path('dist/skill.zip')
+          with ZipFile(source) as archive:
+              names = archive.namelist()
+              assert 'nobiwriter/SKILL.md' in names
+              assert names and all(name.startswith('nobiwriter/') for name in names)
+              assert archive.testzip() is None
+          source.rename('dist/nobiwriter-skill.zip')
+          PY
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          set -euo pipefail
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "Release already exists. Refusing to overwrite its asset." >&2
+            exit 1
+          fi
+          gh release create "$RELEASE_TAG" dist/nobiwriter-skill.zip \
+            --verify-tag \
+            --title "NobiWriter $RELEASE_TAG" \
+            --generate-notes

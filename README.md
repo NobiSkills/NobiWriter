@@ -6,7 +6,7 @@
 
 صدای برند ثابت می‌ماند. لحن و منطق متن با هدف، مخاطب و محل نمایش تغییر می‌کند.
 
-[شروع کار](docs/getting-started.md) · [دریافت و نصب](docs/installation.md) · [نمونه‌ها](examples/README.md) · [بسته اسکیل](skills/nobiwriter/SKILL.md)
+[**دانلود ZIP آخرین نسخه**](https://github.com/piwoinjast/NobiWriter/releases/latest/download/nobiwriter-skill.zip) · [فهرست نسخه‌ها](https://github.com/piwoinjast/NobiWriter/releases) · [شروع کار](docs/getting-started.md) · [دریافت و نصب](docs/installation.md) · [نمونه‌ها](examples/README.md) · [بسته اسکیل](skills/nobiwriter/SKILL.md)
 
 ## نسخه ۱.۲.۰
 
