@@ -93,4 +93,4 @@ description: NobiWriter writes, edits, evaluates and adapts Persian copy for Nob
 - Reference Audit فقط با درخواست صریح نمایش داده شود. «فایل بازشده»، «خوانده‌شده در همین گفت‌وگو»، «دسترسی ناقص» و «ناموجود» را جدا کن؛ خوداظهاری جای لاگ ابزار نیست.
 - قبل از تحویل تایید کن: عملیات و شمار گزینه‌ها رعایت شده، ادعا و مرحله مالی درست است، منبع اصلی مرتبط واقعا در دسترس بوده، خروجی از نظر زبان و Surface مناسب است و ادعای اجرای ابزار یا تست ساختگی نیست.
 
-برای توسعه و رگرسیون، از [آزمون‌های پایه](tests/routing-evaluation-cases.json)، [نسخه ۱.۲.۰](tests/release-1.2.0-cases.json)، [نسخه ۱.۳.۰](tests/release-1.3.0-cases.json) و [سناریوهای فعال‌سازی](tests/activation-routing-cases.json) و [راهنمای آزمون](tests/README.md) استفاده کن. آزمون ساختار یا عبور CI به معنی خواندن واقعی رفرنس در زمان پاسخ یا تایید رفتار مدل نیست.
+برای توسعه، از [آزمون‌های پایه](tests/routing-evaluation-cases.json)، [نسخه ۱.۲.۰](tests/release-1.2.0-cases.json)، [نسخه ۱.۳.۰](tests/release-1.3.0-cases.json) و [سناریوهای فعال‌سازی](tests/activation-routing-cases.json) و [راهنمای آزمون](tests/README.md) استفاده کن. آزمون ساختار یا عبور CI به معنی خواندن واقعی رفرنس در زمان پاسخ یا تایید رفتار مدل نیست.
