@@ -6,7 +6,7 @@
 
 صدای برند ثابت می‌ماند. لحن و منطق متن با هدف، مخاطب و محل نمایش تغییر می‌کند.
 
-[**دانلود ZIP آخرین نسخه**](https://github.com/piwoinjast/NobiWriter/releases/latest/download/nobiwriter-skill.zip) · [فهرست نسخه‌ها](https://github.com/piwoinjast/NobiWriter/releases) · [شروع کار](docs/getting-started.md) · [دریافت و نصب](docs/installation.md) · [نمونه‌ها](examples/README.md) · [بسته اسکیل](skills/nobiwriter/SKILL.md)
+[**دانلود ZIP آخرین نسخه**](https://github.com/piwoinjast/NobiWriter/releases/latest/download/nobiwriter-skill.zip) · [فهرست نسخه‌ها](https://github.com/piwoinjast/NobiWriter/releases) · [شروع کار](docs/getting-started.md) · [دریافت و نصب](docs/installation.md) · [گزارش عملکرد نسخه‌ها](test-reports/README.md) · [نمونه‌ها](examples/README.md) · [بسته اسکیل](skills/nobiwriter/SKILL.md)
 
 ## نسخه ۱.۲.۰
 
@@ -15,6 +15,10 @@
 کنترل نگارش، هم متن و هم تحلیل را پوشش می‌دهد. خلاقیت و تمایز در تبلیغات جدا امتیاز می‌گیرند. در تولید دارای ادعای نامعتبر، پیش‌نویس جایگزین ایمن ارائه می‌شود. امتیاز پایه، تناسب با Surface و وضعیت استفاده مستقل‌اند. جدول امتیاز، محاسبه قابل بازسازی و رندر اختیاری SVG نیز به بسته اضافه شده‌اند.
 
 ۳۸ سناریوی رفتاری تعریف شده‌اند و اجرای آن‌ها روی مدل در این نسخه هنوز ثبت نشده است. ۴۱ آزمون مکانیکی ابزارها با تست واقعی مدل فرق دارند. شرح تغییرات در [تاریخچه](CHANGELOG.md) و روش آزمون در [راهنمای تست](skills/nobiwriter/tests/README.md) آمده است.
+
+## گزارش عملکرد و آزمون‌های نسخه‌ای
+
+برای مشاهده نتایج تست‌های دستی، نقاط ضعف، اصلاحات و مقایسه منصفانه عملکرد در هر انتشار، [داشبورد تست NobiWriter](test-reports/README.md) را ببینید. گزارش [۱۰ تست اولیه](test-reports/versions/pre-1.2.0.md) و [آزمون یکپارچه نسخه ۱.۲.۰](test-reports/versions/v1.2.0.md) جدا ثبت شده‌اند. نرخ قبولی این دو آزمون مستقیما قابل مقایسه نیست، چون مجموعه معیارهایشان متفاوت است.
 
 ## کجا به کار می‌آید؟
 
@@ -135,6 +139,7 @@
 | [docs](docs/architecture.md) | راهنمای استفاده، ساختار و منابع |
 | [schemas](schemas/README.md) | قرارداد داده برای بریف، ادعا و حقایق محصول |
 | [evals](evals/README.md) | سناریوها و روش ارزیابی رفتاری اولیه |
+| [test-reports](test-reports/README.md) | داشبورد نتایج، گزارش نسخه‌ها و روند بهبود |
 | [تست‌های نسخه جدید](skills/nobiwriter/tests/README.md) | رگرسیون، محاسبه نمره، نگارش و قالب پاسخ |
 | [scripts](scripts/validate_repository.py) | اعتبارسنجی ساختار و تولید بسته نصب |
 
