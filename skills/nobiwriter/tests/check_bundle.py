@@ -21,6 +21,7 @@ REQUIRED_REFS = [
     'copywriting-and-landings.md', 'ux-and-microcopy-patterns.md', 'review.md',
     'gold-campaign-exemplar.md', 'creative-quality.md', 'safe-alternatives.md',
     'final-copy-lint.md', 'visual-evaluation.md', 'strategic-creative-reasoning.md',
+    'reference-loading-audit.md',
 ]
 
 
