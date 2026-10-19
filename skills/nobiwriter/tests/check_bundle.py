@@ -53,8 +53,12 @@ def validate(root: Path = ROOT) -> dict:
     for name in REQUIRED_REFS:
         if '](references/' + name + ')' not in core:
             errors.append('Missing direct entrypoint reference: ' + name)
-    # The frontmatter is the discovery contract: reject oversized or misleading metadata.
-    desc_match = re.search(r'^description:\s*(.+)    python_files = 0
+    # Frontmatter controls skill discovery, so keep it concise and valid.
+    desc_match = re.search(r'^description:\s*(.+)$', front.group(1), re.M) if front else None
+    if not desc_match or not 1 <= len(desc_match.group(1)) <= 1024:
+        errors.append('Discovery description must be between 1 and 1024 characters')
+    links = 0
+    python_files = 0
     for p in root.rglob('*'):
         if '__pycache__' in p.parts:
             continue
