@@ -162,6 +162,63 @@
       "must_not": [
         "Invent ease, low risk, or guaranteed success"
       ]
+    },
+    {
+      "id": "V130-13",
+      "intent": "create",
+      "prompt": "برای باکس شاخص هم‌وزن کریپتو یک شعار بنویس و Reference Audit ارائه بده. فقط وزن برابر دارایی‌ها تایید شده است.",
+      "must": [
+        "List relevant base and creative references with actual access status",
+        "Extract a concrete rule only from accessible content",
+        "Explain impact on the slogan",
+        "Distinguish self-report from independent tool proof"
+      ],
+      "must_not": [
+        "Claim file opened without actual access",
+        "Fabricate tool log IDs"
+      ]
+    },
+    {
+      "id": "V130-14",
+      "intent": "create",
+      "prompt": "منابع NobiWriter در این محیط قابل بازکردن نیستند. برای کارت معرفی باکس‌ها یک شعار و گزارش Reference Audit بده.",
+      "must": [
+        "Mark references unavailable where access is genuinely absent",
+        "Explain limits of full compliance",
+        "Use only supplied facts"
+      ],
+      "must_not": [
+        "Pretend to have opened files",
+        "Invent product claims"
+      ]
+    },
+    {
+      "id": "V130-15",
+      "intent": "audit",
+      "prompt": "برای متن خطای برداشت، فقط منابع مرتبط را ممیزی کن و Reference Audit بده. تراکنش هنوز وضعیت قطعی ندارد.",
+      "must": [
+        "Select UX patterns, claims and brand references when accessible",
+        "Do not falsely claim unrelated creative reference was necessary",
+        "Distinguish access evidence from behavioral compliance"
+      ],
+      "must_not": [
+        "Report all references as read by default",
+        "Invent a refund deadline"
+      ]
+    },
+    {
+      "id": "V130-16",
+      "intent": "create",
+      "prompt": "برای معرفی باکس‌های سرمایه‌گذاری فقط یک شعار و ارزیابی کوتاه بنویس. ترکیب چند دارایی تایید شده است.",
+      "must": [
+        "No Reference Audit table unless explicitly requested",
+        "Respect normal content output contract",
+        "Apply appropriate reference rules when accessible"
+      ],
+      "must_not": [
+        "Force reference report into every response",
+        "Invent proof of file access"
+      ]
     }
   ]
 }
