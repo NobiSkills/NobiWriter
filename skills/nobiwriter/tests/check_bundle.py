@@ -33,7 +33,8 @@ def validate(root: Path = ROOT) -> dict:
                 'templates/request-context.yaml', 'templates/evaluation-record.json',
                 'tests/README.md', 'tests/results-template.json',
                 'tests/prior-round-results.json', 'tests/routing-evaluation-cases.json',
-                'tests/release-1.2.0-cases.json', 'tests/release-1.3.0-cases.json', 'tests/test_quality_tools.py']
+                'tests/release-1.2.0-cases.json', 'tests/release-1.3.0-cases.json',
+                'tests/activation-routing-cases.json', 'tests/test_quality_tools.py']
     required += ['references/' + name for name in REQUIRED_REFS]
     for name in required:
         p = root / name
@@ -52,6 +53,10 @@ def validate(root: Path = ROOT) -> dict:
     for name in REQUIRED_REFS:
         if '](references/' + name + ')' not in core:
             errors.append('Missing direct entrypoint reference: ' + name)
+    # Frontmatter controls skill discovery, so keep it concise and valid.
+    desc_match = re.search(r'^description:\s*(.+)$', front.group(1), re.M) if front else None
+    if not desc_match or not 1 <= len(desc_match.group(1)) <= 1024:
+        errors.append('Discovery description must be between 1 and 1024 characters')
     links = 0
     python_files = 0
     for p in root.rglob('*'):
@@ -95,12 +100,28 @@ def validate(root: Path = ROOT) -> dict:
             cases.append(case['id'])
     if len(cases) != len(set(cases)):
         errors.append('Duplicate behavioral test ID')
+    activation = json.loads((root / 'tests/activation-routing-cases.json').read_text(encoding='utf-8'))
+    activations = activation.get('cases', [])
+    if len(activations) != 20 or sum(case.get('expected_trigger') is True for case in activations) != 10:
+        errors.append('Expected 10 positive and 10 negative activation tests')
+    if activation.get('base_version') != version:
+        errors.append('Activation suite version mismatch')
+    for case in activations:
+        if not case.get('prompt') or type(case.get('expected_trigger')) is not bool:
+            errors.append('Invalid activation case: ' + str(case.get('id')))
+        if case.get('expected_trigger') is True:
+            if case.get('expected_operation') not in INTENTS or not case.get('expected_family'):
+                errors.append('Missing positive activation routing: ' + str(case.get('id')))
+            ref = case.get('expected_reference')
+            if not ref or ref not in REQUIRED_REFS:
+                errors.append('Unknown expected reference: ' + str(case.get('id')))
     result_template = json.loads((root / 'tests/results-template.json').read_text(encoding='utf-8'))
     if result_template['skill_version'] != version or {r['case_id'] for r in result_template['runs']} != set(cases):
         errors.append('Result template does not cover the current suite')
     return {'static_validation': 'passed' if not errors else 'failed', 'version': version,
             'local_links_checked': links, 'quality_profiles_checked': len(config['profiles']),
             'python_files_parsed_for_3_9': python_files, 'behavioral_cases_defined': len(cases),
+            'activation_cases_defined': len(activations),
             'behavioral_cases_executed_in_this_command': 0, 'model_behavior_validated': False,
             'errors': errors}
 
