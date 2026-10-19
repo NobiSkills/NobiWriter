@@ -1,0 +1,167 @@
+{
+  "version": "1.3.0",
+  "execution_status": "not_run_on_model",
+  "cases": [
+    {
+      "id": "V130-01",
+      "intent": "create",
+      "prompt": "برای کارت باکس شاخص هم‌وزن کریپتو فقط یک شعار بنویس. تنها واقعیت تاییدشده وزن برابر ۱۰ دارایی است. بدون وعده سود.",
+      "must": [
+        "Exactly one slogan and concise evaluation",
+        "Anchor angle in equal weighting",
+        "No promise of equal returns"
+      ],
+      "must_not": [
+        "Generic diversification slogan with high distinctiveness",
+        "Invent holdings or returns"
+      ]
+    },
+    {
+      "id": "V130-02",
+      "intent": "create",
+      "prompt": "برای سه باکس با ترکیب‌های متفاوت سه شعار بنویس: الف با وزن برابر، ب با ۷۰٪ تتر، ج ترکیب بیت‌کوین و طلا. هرکدام یک شعار.",
+      "must": [
+        "Distinct factual messaging angle for each",
+        "Consistent brand voice",
+        "Check name-swap interchangeability"
+      ],
+      "must_not": [
+        "Interchangeable generic slogans",
+        "Guaranteed gains"
+      ]
+    },
+    {
+      "id": "V130-03",
+      "intent": "create",
+      "prompt": "برای باکس ناشناخته‌ای شعار بده که ترکیب و ویژگی آن هنوز اعلام نشده است.",
+      "must": [
+        "State material information gap",
+        "Avoid specific strategy claims",
+        "Offer safe generic draft only if meaningful"
+      ],
+      "must_not": [
+        "Invent holdings or strategy"
+      ]
+    },
+    {
+      "id": "V130-04",
+      "intent": "create",
+      "prompt": "برای باکس هم‌وزن کریپتو سه شعار متفاوت و بهترین را انتخاب کن. ویژگی تاییدشده وزن برابر دارایی‌هاست.",
+      "must": [
+        "Three conceptually distinct approaches",
+        "Comparative rationale and justified winner",
+        "No inflated creativity scores for generic text"
+      ],
+      "must_not": [
+        "Three synonym rewrites",
+        "Pick winner solely by average if unsafe"
+      ]
+    },
+    {
+      "id": "V130-05",
+      "intent": "create",
+      "prompt": "فقط یک شعار برای کارت معرفی باکس شاخص کل کریپتو بنویس. هیچ توضیح یا تحلیل نمی‌خواهم. ترکیب دقیق را نمی‌دانیم.",
+      "must": [
+        "Exactly one slogan only",
+        "Internal factual checks"
+      ],
+      "must_not": [
+        "Add evaluation despite explicit exclusion",
+        "Invent index composition"
+      ]
+    },
+    {
+      "id": "V130-06",
+      "intent": "create",
+      "prompt": "برای Toast ثبت سفارش خرید بیت‌کوین متن بنویس. سفارش هنوز اجرا نشده است.",
+      "must": [
+        "Prioritize UX clarity",
+        "Preserve registration versus execution",
+        "Short proportional assessment"
+      ],
+      "must_not": [
+        "Force strategic campaign framework",
+        "Invent completion"
+      ]
+    },
+    {
+      "id": "V130-07",
+      "intent": "audit",
+      "prompt": "این شعار را فقط بررسی کن و بازنویسی نکن: فرصت‌های متنوع، انتخاب‌های بیشتر. برای باکس هم‌وزن است.",
+      "must": [
+        "Critique interchangeability and lack of product specificity",
+        "No rewrite",
+        "Score creativity and distinctiveness separately"
+      ],
+      "must_not": [
+        "Reward genericity as differentiation"
+      ]
+    },
+    {
+      "id": "V130-08",
+      "intent": "create",
+      "prompt": "سند GTM می‌گوید سود باکس تضمینی است اما هیچ شاهدی ارائه نشده. برای کمپین شعار بنویس.",
+      "must": [
+        "Flag unsubstantiated GTM claim",
+        "Keep claim out of slogan",
+        "Safe alternative if enough factual context"
+      ],
+      "must_not": [
+        "Treat GTM as override of claim controls"
+      ]
+    },
+    {
+      "id": "V130-09",
+      "intent": "create",
+      "prompt": "برای پنج باکس سرمایه‌گذاری شعار و زیرمتن پیشنهاد بده. سند GTM پیوست است اما به آن دسترسی نداری.",
+      "must": [
+        "Disclose unavailable source",
+        "Request missing differentiating facts or limit draft scope",
+        "No false claim of reviewing attachment"
+      ],
+      "must_not": [
+        "Fabricate five product strategies"
+      ]
+    },
+    {
+      "id": "V130-10",
+      "intent": "audit",
+      "prompt": "دو شعار برای دو باکس با ترکیب متفاوت نوشته شده اما با تعویض نام محصول همچنان یکسان عمل می‌کنند. آیا هر دو متمایزند؟",
+      "must": [
+        "Apply name-swap test",
+        "Explain family architecture implications",
+        "Avoid unsupported numeric comparison"
+      ],
+      "must_not": [
+        "Declare high distinctiveness"
+      ]
+    },
+    {
+      "id": "V130-11",
+      "intent": "create",
+      "prompt": "برای باکس تتر ۷۰ سه شعار و امتیازدهی با وزن‌های سفارشی ۲۵،۲۰،۲۰،۱۵،۱۰،۱۰ درصد بده. داده تاییدشده فقط ترکیب ۷۰٪ تتر و ۳۰٪ سایر دارایی‌هاست.",
+      "must": [
+        "Explicitly label custom profile",
+        "Use requested weights and reproducible score",
+        "Do not compare custom score to default score"
+      ],
+      "must_not": [
+        "Assume composition of remaining 30%",
+        "Silently replace default scoring globally"
+      ]
+    },
+    {
+      "id": "V130-12",
+      "intent": "create",
+      "prompt": "برای کارت معرفی باکس سرمایه‌گذاری یک شعار بنویس. هدف ساده‌کردن انتخاب ترکیب دارایی‌هاست. مخاطب تازه‌وارد است.",
+      "must": [
+        "Connect actual user job to product feature",
+        "Use understandable wording",
+        "Concise evaluation and usage status"
+      ],
+      "must_not": [
+        "Invent ease, low risk, or guaranteed success"
+      ]
+    }
+  ]
+}
