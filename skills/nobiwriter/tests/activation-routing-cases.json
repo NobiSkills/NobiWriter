@@ -1,0 +1,148 @@
+{
+  "suite": "activation-and-near-miss",
+  "base_version": "1.3.0",
+  "execution_status": "not_run_on_model",
+  "purpose": "Tests whether automatic skill discovery is appropriate, separate from output behavior and actual reference reads.",
+  "cases": [
+    {
+      "id": "ACT-P01",
+      "prompt": "می‌خوام برای کارت باکس سرمایه‌گذاری نوبیتکس یک شعار بنویسی",
+      "expected_trigger": true,
+      "expected_operation": "create",
+      "expected_family": "advertising",
+      "expected_reference": "strategic-creative-reasoning.md"
+    },
+    {
+      "id": "ACT-P02",
+      "prompt": "برای Toast ثبت سفارش اسپات که هنوز اجرا نشده متن کوتاه بده",
+      "expected_trigger": true,
+      "expected_operation": "create",
+      "expected_family": "ux",
+      "expected_reference": "ux-and-microcopy-patterns.md"
+    },
+    {
+      "id": "ACT-P03",
+      "prompt": "متن خطای برداشت ریالی نوبیتکس رو فقط ویراستاری کن",
+      "expected_trigger": true,
+      "expected_operation": "edit",
+      "expected_family": "ux",
+      "expected_reference": "ux-and-microcopy-patterns.md"
+    },
+    {
+      "id": "ACT-P04",
+      "prompt": "این شعار معاملات تعهدی طلا رو فقط بررسی کن و نمره بده",
+      "expected_trigger": true,
+      "expected_operation": "audit",
+      "expected_family": "advertising",
+      "expected_reference": "review.md"
+    },
+    {
+      "id": "ACT-P05",
+      "prompt": "متن معرفی باکس‌ها رو برای پوش و وب تطبیق بده",
+      "expected_trigger": true,
+      "expected_operation": "adapt",
+      "expected_family": "product",
+      "expected_reference": "touchpoint-surface-map.md"
+    },
+    {
+      "id": "ACT-P06",
+      "prompt": "برای لندینگ طلای دیجیتال نوبیتکس ساختار و متن بنویس",
+      "expected_trigger": true,
+      "expected_operation": "create",
+      "expected_family": "product",
+      "expected_reference": "copywriting-and-landings.md"
+    },
+    {
+      "id": "ACT-P07",
+      "prompt": "برای سکشن دانلود اپلیکیشن نوبیتکس کپی رایتینگ انجام بده",
+      "expected_trigger": true,
+      "expected_operation": "optimize",
+      "expected_family": "product",
+      "expected_reference": "copywriting-and-landings.md"
+    },
+    {
+      "id": "ACT-P08",
+      "prompt": "@NobiWriter شعار پیشنهادی «آینده‌ات رو طلا کوین» رو بررسی کن",
+      "expected_trigger": true,
+      "expected_operation": "audit",
+      "expected_family": "advertising",
+      "expected_reference": "review.md"
+    },
+    {
+      "id": "ACT-P09",
+      "prompt": "برای صفحه واریز داخلی نوبیتکس FAQ راهنما تهیه کن",
+      "expected_trigger": true,
+      "expected_operation": "create",
+      "expected_family": "educational",
+      "expected_reference": "ux-and-microcopy-patterns.md"
+    },
+    {
+      "id": "ACT-P10",
+      "prompt": "متن اطلاعیه محدودیت موقت بازار تتر تومان نوبیتکس رو ویرایش کن",
+      "expected_trigger": true,
+      "expected_operation": "edit",
+      "expected_family": "operational",
+      "expected_reference": "claims.md"
+    },
+    {
+      "id": "ACT-N01",
+      "prompt": "قیمت تتر فردا چند می‌شود و الان لانگ بگیرم؟",
+      "expected_trigger": false,
+      "near_miss_category": "market_advice"
+    },
+    {
+      "id": "ACT-N02",
+      "prompt": "داده های قیمت بیت کوین را تحلیل تکنیکال کن",
+      "expected_trigger": false,
+      "near_miss_category": "market_advice"
+    },
+    {
+      "id": "ACT-N03",
+      "prompt": "چطور سفارش limit در نوبیتکس ثبت می‌شود؟ راهنمایی مفهومی بده، متن UI تولید نکن",
+      "expected_trigger": false,
+      "near_miss_category": "product_support"
+    },
+    {
+      "id": "ACT-N04",
+      "prompt": "آیا نوبیتکس قانونی است؟ گزارش قوانین جاری می‌خواهم",
+      "expected_trigger": false,
+      "near_miss_category": "legal_research"
+    },
+    {
+      "id": "ACT-N05",
+      "prompt": "آدرس سایت نوبیتکس را بده",
+      "expected_trigger": false,
+      "near_miss_category": "navigation"
+    },
+    {
+      "id": "ACT-N06",
+      "prompt": "مشخصات و قیمت گوشی Samsung S26 را مقایسه کن",
+      "expected_trigger": false,
+      "near_miss_category": "shopping"
+    },
+    {
+      "id": "ACT-N07",
+      "prompt": "چه رستوران‌هایی اطراف من باز هستند؟",
+      "expected_trigger": false,
+      "near_miss_category": "local_search"
+    },
+    {
+      "id": "ACT-N08",
+      "prompt": "یک شعر کوتاه درباره طلای پاییزی بگو، برای برند نیست",
+      "expected_trigger": false,
+      "near_miss_category": "general_creative"
+    },
+    {
+      "id": "ACT-N09",
+      "prompt": "وضعیت آب و هوای فردای تهران چیست؟",
+      "expected_trigger": false,
+      "near_miss_category": "weather"
+    },
+    {
+      "id": "ACT-N10",
+      "prompt": "این کد پایتون را دیباگ کن و هیچ کاری با متن نوبیتکس ندارم",
+      "expected_trigger": false,
+      "near_miss_category": "coding"
+    }
+  ]
+}
