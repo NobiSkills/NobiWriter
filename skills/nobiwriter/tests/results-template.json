@@ -1,48 +1,360 @@
 {
-  "skill_version": "1.2.0",
+  "skill_version": "1.3.0",
   "commit_sha": null,
   "package_sha256": null,
   "model": null,
   "execution_date": null,
   "environment": null,
   "runs": [
-    {"case_id":"R01","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R02","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R03","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R04","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R05","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R06","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R07","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R08","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R09","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R10","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R11","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R12","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R13","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R14","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R15","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R16","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R17","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R18","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R19","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R20","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R21","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"R22","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"V120-01","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"V120-02","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"V120-03","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"V120-04","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"V120-05","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"V120-06","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"V120-07","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"V120-08","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"V120-09","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"V120-10","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"V120-11","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"V120-12","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"V120-13","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"V120-14","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"V120-15","status":"not_run","response":null,"observations":[],"reviewer":null},
-    {"case_id":"V120-16","status":"not_run","response":null,"observations":[],"reviewer":null}
+    {
+      "case_id": "R01",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R02",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R03",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R04",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R05",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R06",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R07",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R08",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R09",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R10",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R11",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R12",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R13",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R14",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R15",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R16",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R17",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R18",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R19",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R20",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R21",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "R22",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V120-01",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V120-02",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V120-03",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V120-04",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V120-05",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V120-06",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V120-07",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V120-08",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V120-09",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V120-10",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V120-11",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V120-12",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V120-13",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V120-14",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V120-15",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V120-16",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V130-01",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V130-02",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V130-03",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V130-04",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V130-05",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V130-06",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V130-07",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V130-08",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V130-09",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V130-10",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V130-11",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    },
+    {
+      "case_id": "V130-12",
+      "status": "not_run",
+      "response": null,
+      "observations": [],
+      "reviewer": null
+    }
   ]
 }
