@@ -101,7 +101,44 @@
       "file": "19-NobiWriter-Creative-Framework.txt",
       "status": "available",
       "redistributed": false
+    },
+    {
+      "file": "آیین نگارش نوبیتکس.PDF",
+      "title": "آیین نگارش نوبیتکس",
+      "status": "available",
+      "redistributed": false,
+      "received_at": "2026-10-24",
+      "reviewed_at": "2026-10-24",
+      "sha256": "c4411388ec51b85085b1ed4b5dde3bd8cc25974d98ff4b35d212ba82b56749a5",
+      "pdf_pages": 7,
+      "source_period": null,
+      "source_approval_status": "not_established_by_this_integration",
+      "derived_references": [
+        "skills/nobiwriter/references/persian-writing-rules.md",
+        "skills/nobiwriter/references/vocabulary.md",
+        "skills/nobiwriter/references/final-copy-lint.md",
+        "skills/nobiwriter/references/ux-and-microcopy-patterns.md"
+      ],
+      "integration": "Operational rules with page references. Original PDF and raw research are not distributed. Product facts require separate current evidence."
+    },
+    {
+      "file": "260207-BrandReport.pdf",
+      "title": "گزارش جامع برند، زمستان ۱۴۰۴",
+      "status": "available",
+      "redistributed": false,
+      "received_at": "2026-10-24",
+      "reviewed_at": "2026-10-24",
+      "sha256": "b02b3d81be5bfa9d1796d707a9570f984a1693ebe7267d9825b860d002051793",
+      "pdf_pages": 121,
+      "source_period": "زمستان ۱۴۰۴ / بهمن ۱۴۰۴",
+      "source_approval_status": "not_established_by_this_integration",
+      "derived_references": [
+        "skills/nobiwriter/references/brand-research-context.md",
+        "skills/nobiwriter/references/brand-voice.md",
+        "skills/nobiwriter/references/claims.md"
+      ],
+      "integration": "Operational rules with page references. Original PDF and raw research are not distributed. Product facts require separate current evidence."
     }
   ],
-  "updated_at": "2026-10-17"
+  "updated_at": "2026-10-24"
 }

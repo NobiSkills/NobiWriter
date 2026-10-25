@@ -1,0 +1,37 @@
+{
+  "skill_version": "1.4.0",
+  "source_base_commit": "259ba1e6161d3512ab42067f8b06dade3da9bce4",
+  "execution_date": "2026-10-24",
+  "environment": "Three independent subagents using the local repository bundle",
+  "model": null,
+  "model_id_status": "not_recorded",
+  "acceptance_review": "Reviewed by the parent agent after receiving each raw response",
+  "all_defined_cases_executed": false,
+  "reference_access_independently_audited": false,
+  "runs": [
+    {
+      "case_id": "V140-05",
+      "agent_task": "source_case_expiry",
+      "prompt": "با NobiWriter این پیام را کوتاه و روشن کن: کد واردشده معتبر نمی‌باشد. علت قطعی سیستم، پایان اعتبار کد است. فقط متن نهایی را بده.",
+      "response": "اعتبار کد پایان یافته است.",
+      "status": "passed_observed_run",
+      "observations": ["Preserved expiration as the known cause", "No unsupported retry action or deadline"]
+    },
+    {
+      "case_id": "V140-02",
+      "agent_task": "source_case_numbers",
+      "prompt": "با NobiWriter عدد 123.45 را برای دو محل نمایش تطبیق بده: مقدار روی نمودار قیمت و جمله فارسیِ قیمت برابر با 123.45 تومان است. فقط دو متن نهایی را بده.",
+      "response": "123.45\n\nقیمت برابر با ۱۲۳٫۴۵ تومان است.",
+      "status": "passed_observed_run",
+      "observations": ["Latin digits for the chart value", "Persian digits in prose", "Numeric value preserved"]
+    },
+    {
+      "case_id": "V140-10",
+      "agent_task": "source_case_security",
+      "prompt": "با NobiWriter فقط این استدلال و ادعای تبلیغاتی را ارزیابی کن: در گزارش برند، برخی پاسخ‌دهندگان نوبیتکس را امن توصیف کرده‌اند، پس می‌توانیم بگوییم امن‌ترین صرافی ایران. هیچ ارزیابی فنی مقایسه‌ای نداریم.",
+      "response": "**حکم: استدلال معتبر نیست. ادعای «امن‌ترین صرافی ایران» با شواهد موجود برای استفاده‌ی تبلیغاتی نامناسب است.**\n\nاین استدلال دو جهش بی‌پشتوانه دارد:\n\n- **از ادراک به عملکرد:** توصیف «امن» توسط برخی پاسخ‌دهندگان، برداشت آن‌ها در جامعه و دوره‌ی همان پژوهش است و امنیت فنی را اثبات نمی‌کند.\n- **از توصیف به رتبه‌بندی:** «امن‌ترین» ادعای برتری نسبت به رقباست. بدون ارزیابی مقایسه‌ای، چنین رتبه‌ای قابل استنتاج نیست.\n\n**وضعیت شاهد: برتری امنیتی تاییدنشده است.** نبود شاهد، ناامن‌بودن نوبیتکس را هم اثبات نمی‌کند.\n\nامتیازهای مستقلِ کیفیت بیان ادعا:\n\n| معیار | امتیاز | نمایش | دلیل |\n| --- | --- | --- | --- |\n| صدای برند | ۲/۱۰ | ▰▰▱▱▱▱▱▱▱▱ | برتری بدون شاهد با بیان دقیق و مسئولانه سازگار نیست. |\n| وضوح | ۷/۱۰ | ▰▰▰▰▰▰▰▱▱▱ | منظور روشن است، اما معیار و دامنه‌ی امنیت مشخص نیست. |\n\n**داده‌ی لازم:** ارزیابی فنی مقایسه‌ای معتبر با معیارهای مشخص، دامنه‌ی رقبا و بازه‌ی زمانی روشن. هر ادعای حاصل نیز باید به همان معیارها و دامنه محدود بماند.",
+      "status": "passed_observed_run",
+      "observations": ["Rejected the unsupported superlative", "Separated perception from technical evidence", "Audit only, no replacement slogan", "Independent partial scores rather than an unsupported overall score"]
+    }
+  ]
+}

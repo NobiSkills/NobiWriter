@@ -156,8 +156,8 @@ def lint_text(text: str, sensitive: bool = False) -> list:
     for lineno, line in enumerate(text.splitlines(), 1):
         for column, character in enumerate(line, 1):
             code = codes.get(ord(character))
-            if sensitive and character == '!':
-                code = 'exclamation_in_sensitive_copy'
+            if character in {'!', '\uff01'}:
+                code = 'exclamation_in_sensitive_copy' if sensitive else 'exclamation_mark'
             if code:
                 findings.append({'rule': code, 'line': lineno, 'column': column,
                                  'codepoint': f'U+{ord(character):04X}', 'severity': 'error'})

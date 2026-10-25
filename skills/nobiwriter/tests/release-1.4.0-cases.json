@@ -1,0 +1,126 @@
+{
+  "version": "1.4.0",
+  "execution_status": "not_run_on_model",
+  "cases": [
+    {
+      "id": "V140-01", "intent": "edit",
+      "prompt": "با NobiWriter فقط رسم‌الخط این متن را اصلاح کن و فقط متن نهایی را بده: مرحله بعد: تأیید مبدا و ارتقا حساب. دعوت‌نامه و باقی‌مانده را ببینید.",
+      "must": ["Use the explicit house forms from W02, W05, W06 and W08", "Preserve the original meaning and output only edited copy"],
+      "must_not": ["Invent a product step or an account upgrade benefit", "Treat the house spellings as universal Persian grammar"]
+    },
+    {
+      "id": "V140-02", "intent": "adapt",
+      "prompt": "با NobiWriter عدد 123.45 را برای دو محل نمایش تطبیق بده: مقدار روی نمودار قیمت و جمله فارسیِ قیمت برابر با 123.45 تومان است. فقط دو متن نهایی را بده.",
+      "must": ["Use Latin digits for the chart value", "Use Persian digits in the Persian prose", "Keep the numeric value and stated unit unchanged"],
+      "must_not": ["Convert every number to Persian regardless of surface", "Add currency units to the chart without evidence"]
+    },
+    {
+      "id": "V140-03", "intent": "edit",
+      "prompt": "برای برچسب توضیحی فارسی کنار نمودار بنویس: در 24 ساعت گذشته. این برچسب متن است، نه مقدار محور. فقط متن نهایی.",
+      "must": ["Use Persian digits for the prose label", "Distinguish a caption from plotted numeric values"],
+      "must_not": ["Assume all text near a chart uses Latin digits"]
+    },
+    {
+      "id": "V140-04", "intent": "edit",
+      "prompt": "با NobiWriter فقط متن فارسی را ویراستاری کن و نام فنی را حفظ کن: برای واریز از ERC-20 استفاده نمایید. شناسه سفارش: AB-123.",
+      "must": ["Keep ERC-20 and AB-123 unchanged", "Use a direct verb and preserve the transaction scope"],
+      "must_not": ["Convert digits inside identifiers", "Invent network support beyond the supplied brief"]
+    },
+    {
+      "id": "V140-05", "intent": "edit",
+      "prompt": "با NobiWriter این پیام را کوتاه و روشن کن: کد واردشده معتبر نمی‌باشد. علت قطعی سیستم، پایان اعتبار کد است. فقط متن نهایی را بده.",
+      "must": ["Preserve expiration as the known cause", "Use plain written Persian"],
+      "must_not": ["Describe the code as mistyped or wrong", "Invent resend or retry actions"]
+    },
+    {
+      "id": "V140-06", "intent": "edit",
+      "prompt": "برای نوبیتکس فقط این پیام را ساده کن: درخواست برداشت ثبت شده است و هنوز به بانک ارسال نشده است. هیچ اطلاعات دیگری نداریم.",
+      "must": ["Keep registration separate from dispatch and completion", "Preserve the negation about bank dispatch"],
+      "must_not": ["Say the withdrawal completed", "Remove material transaction state to prefer positive sentences"]
+    },
+    {
+      "id": "V140-07", "intent": "edit",
+      "prompt": "با NobiWriter پیام نتیجه افزودن کارت را اصلاح کن. دکمه موجود افزودن کارت است و افزودن موفق بوده. متن فعلی: کارت بانکی با موفقیت ثبت گردید. فقط متن نهایی.",
+      "must": ["Use the same action meaning as adding a card", "Use a direct, concise success message"],
+      "must_not": ["Invent identity verification or card activation", "Rename a financial transaction stage for consistency"]
+    },
+    {
+      "id": "V140-08", "intent": "edit",
+      "prompt": "این متن تبلیغاتی نوبیتکس را فقط از نظر نشانه‌گذاری اصلاح کن: ترکیب دارایی‌ها در یک خرید! فقط متن نهایی را بده.",
+      "must": ["Remove the exclamation under W19", "Preserve the rest of the promotional message"],
+      "must_not": ["Treat the rule as limited to error messages", "Add a financial claim"]
+    },
+    {
+      "id": "V140-09", "intent": "edit",
+      "prompt": "برای نوبیتکس این متن را ویرایش کن: لغو به‌صورت خودکار انجام می‌گردد و از طریق پیامک به شما اطلاع داده می‌شود. فرض کن هر دو رفتار در بریف تایید شده‌اند.",
+      "must": ["Prefer simpler verbs and remove redundant phrasing", "Keep both cancellation and notification"],
+      "must_not": ["Delete the notification channel", "Add an exact completion time"]
+    },
+    {
+      "id": "V140-10", "intent": "audit",
+      "prompt": "با NobiWriter فقط این استدلال و ادعای تبلیغاتی را ارزیابی کن: در گزارش برند، برخی پاسخ‌دهندگان نوبیتکس را امن توصیف کرده‌اند، پس می‌توانیم بگوییم امن‌ترین صرافی ایران. هیچ ارزیابی فنی مقایسه‌ای نداریم.",
+      "must": ["Distinguish respondent perception from technical evidence", "Reject the unsupported superlative", "Keep the task audit-only"],
+      "must_not": ["Approve the security claim from perception data", "Produce a replacement slogan"]
+    },
+    {
+      "id": "V140-11", "intent": "audit",
+      "prompt": "با NobiWriter فقط ارزیابی کن: چون خسارت یک حادثه گذشته جبران شده، اعتماد همه کاربران کاملاً بازسازی شده و خسارت‌های آینده تضمین است.",
+      "must": ["Separate past compensation, measured trust and future guarantee", "Flag the unsupported generalizations"],
+      "must_not": ["Treat compensation as a technical security guarantee", "Generate unsolicited copy"]
+    },
+    {
+      "id": "V140-12", "intent": "audit",
+      "prompt": "داده فرضی پژوهش داخلی می‌گوید اعتماد در افراد آگاه از برند از 37% به 39% رسیده، در ابتدای سال 50% بوده است. با NobiWriter این تیتر را ارزیابی کن: اعتماد جامعه کاملاً بازگشت. فقط ارزیابی.",
+      "must": ["Preserve the aware-of-brand denominator and historical context", "Distinguish two percentage points from full recovery"],
+      "must_not": ["Generalize to all society", "Claim a current market statistic from a hypothetical test"]
+    },
+    {
+      "id": "V140-13", "intent": "audit",
+      "prompt": "در یک پژوهش، فقط افرادی که نوبیتکس را اول به یاد آورده‌اند برند را در سه واژه توصیف کرده‌اند. برخی واژه‌ها منفی‌اند. با NobiWriter ارزیابی کن آیا می‌شود سهم این واژه‌ها را سهم همه کاربران ناراضی معرفی کرد؟",
+      "must": ["Distinguish descriptions, respondents and all users", "Keep the source question and sample filter"],
+      "must_not": ["Create a population-wide dissatisfaction percentage"]
+    },
+    {
+      "id": "V140-14", "intent": "audit",
+      "prompt": "با NobiWriter این تصمیم را بررسی کن: چون گزارش برند، خردمند را از تشبیه برند به یک چهره انسانی استنتاج کرده، باید لحن تمام پیام‌ها شبیه همان فرد باشد و کهن‌الگو را مصوبه قطعی سازمان بنامیم.",
+      "must": ["Treat the archetype mapping as interpretation", "Separate personality research from approved brand policy and imitation"],
+      "must_not": ["Imply endorsement by a public figure", "Turn all message families into one tone"]
+    },
+    {
+      "id": "V140-15", "intent": "create",
+      "prompt": "با NobiWriter برای معرفی یک قابلیت تازه نوبیتکس یک تیتر و توضیح بنویس. قابلیت تاییدشده: نمایش موجودی کل و قابل‌برداشت به‌صورت جدا. هدف روایت نوآوری از طریق منفعت واقعی است.",
+      "must": ["Connect the actual distinction to user understanding", "Use the supplied capability rather than unsupported adjectives"],
+      "must_not": ["Invent faster withdrawals or improved returns", "Claim the product is first or most innovative"]
+    },
+    {
+      "id": "V140-16", "intent": "create",
+      "prompt": "با NobiWriter برای کارت باکس سرمایه‌گذاری فقط یک شعار خلاقانه بنویس. ویژگی تاییدشده خرید یک ترکیب دارایی با یک خرید است. مخاطب تازه‌وارد است و قرار است راهنمای روشن و در دسترس باشیم.",
+      "must": ["Keep a creative product-specific angle and one slogan", "Use accessible written Persian", "Provide concise evaluation unless explicitly excluded"],
+      "must_not": ["Replace creativity with a long lecture", "Use guaranteed returns, zero risk or exclamation"]
+    },
+    {
+      "id": "V140-17", "intent": "plan",
+      "prompt": "برای نوبیتکس یک زاویه پیام برای مخاطبان با دغدغه حفظ ارزش پول تعریف کن. فقط می‌دانیم آن‌ها با انتخاب دارایی آشنایی کمی دارند. محصول، ترکیب چند دارایی ارائه می‌دهد.",
+      "must": ["Use the stated need and knowledge level", "Preserve choice and financial uncertainty"],
+      "must_not": ["Guarantee preservation of purchasing power", "Invent age, occupation or risk tolerance"]
+    },
+    {
+      "id": "V140-18", "intent": "edit",
+      "prompt": "با NobiWriter برای مثبت‌ترکردن پیام خطا این جمله را ویرایش کن: وضعیت نهایی برداشت مشخص نیست. هیچ نتیجه، علت یا زمان برگشت وجهی تایید نشده است.",
+      "must": ["Keep uncertainty even if negation is required", "Use operational clarity over reassurance"],
+      "must_not": ["Say funds are safe, returned or guaranteed", "Invent a completion deadline"]
+    },
+    {
+      "id": "V140-19", "intent": "edit",
+      "prompt": "با NobiWriter در این JSON فقط رشته پیام را ویراستاری کن و فقط JSON بده: {\"message\":\"لطفا مبلغ 50000 تومان را وارد نمایید\",\"amount\":50000,\"token\":\"ERC-20\"}",
+      "must": ["Return valid JSON only", "Use Persian digits in the human-readable message", "Preserve numeric amount type and token identifier"],
+      "must_not": ["Convert the JSON numeric value to Persian characters", "Add an evaluation outside the strict output format"]
+    },
+    {
+      "id": "V140-20", "intent": "audit",
+      "prompt": "با NobiWriter بررسی کن آیا گزارش جامع برند زمستان ۱۴۰۴ ثابت می‌کند یک قابلیت امروز برای همه کاربران فعال است؟ هیچ بریف یا سند جاری محصول ارائه نشده است.",
+      "must": ["Separate historical research from current product truth", "Identify the missing current scope evidence"],
+      "must_not": ["Claim current universal availability", "Pretend the original PDF ships with the installable skill"]
+    }
+  ]
+}

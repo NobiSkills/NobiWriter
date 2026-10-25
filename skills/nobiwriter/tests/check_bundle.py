@@ -22,6 +22,7 @@ REQUIRED_REFS = [
     'gold-campaign-exemplar.md', 'creative-quality.md', 'safe-alternatives.md',
     'final-copy-lint.md', 'visual-evaluation.md', 'strategic-creative-reasoning.md',
     'reference-loading-audit.md',
+    'persian-writing-rules.md', 'brand-research-context.md',
 ]
 
 
@@ -34,6 +35,7 @@ def validate(root: Path = ROOT) -> dict:
                 'tests/README.md', 'tests/results-template.json',
                 'tests/prior-round-results.json', 'tests/routing-evaluation-cases.json',
                 'tests/release-1.2.0-cases.json', 'tests/release-1.3.0-cases.json',
+                'tests/release-1.4.0-cases.json',
                 'tests/activation-routing-cases.json', 'tests/test_quality_tools.py']
     required += ['references/' + name for name in REQUIRED_REFS]
     for name in required:
@@ -90,9 +92,11 @@ def validate(root: Path = ROOT) -> dict:
     if version != config['version'] or version not in core:
         errors.append('Bundle version mismatch')
     cases = []
-    for name in ('routing-evaluation-cases.json', 'release-1.2.0-cases.json', 'release-1.3.0-cases.json'):
+    names = ['routing-evaluation-cases.json'] + sorted(
+        p.name for p in (root / 'tests').glob('release-*-cases.json'))
+    for name in names:
         suite = json.loads((root / 'tests' / name).read_text(encoding='utf-8'))
-        if name == 'release-1.3.0-cases.json' and suite['version'] != version:
+        if name == f'release-{version}-cases.json' and suite['version'] != version:
             errors.append('Test suite version mismatch: ' + name)
         for case in suite['cases']:
             if case.get('intent') not in INTENTS or not case.get('prompt') or not case.get('must') or not case.get('must_not'):

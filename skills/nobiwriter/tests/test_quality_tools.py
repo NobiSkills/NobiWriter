@@ -157,8 +157,11 @@ class LintTests(unittest.TestCase):
         self.assertEqual(lint_text('\u06cc\u06a9'), [])
 
     def test_sensitive_exclamation(self):
-        self.assertEqual(lint_text('Done!'), [])
+        self.assertEqual(lint_text('ترکیب دارایی‌ها!')[0]['rule'], 'exclamation_mark')
         self.assertEqual(lint_text('Done!', True)[0]['rule'], 'exclamation_in_sensitive_copy')
+
+    def test_fullwidth_exclamation_cannot_bypass_house_rule(self):
+        self.assertEqual(lint_text('متن\uff01')[0]['rule'], 'exclamation_mark')
 
     def test_input_quote_not_automatically_scanned(self):
         payload = {'input_quote': 'x\u064b', 'generated_copy': 'Corrected copy.'}
